@@ -1,5 +1,4 @@
 # **📘 README.md — ISA Fabric** 
-[![Governance](https://img.shields.io/badge/Governance-Genesis_Constitution-blue)](./docs/governance/Genesis-Constitution.md)
 *A unified, modular ecosystem for semantic annotations (NatSpec++) and orthogonal metrics (ISA Metrics), enabling measurement, benchmarking, and governance across domains like cybersecurity and beyond.*
 
 ISA Fabric is the comprehensive framework combining NatSpec++ (machine-readable tags for systems) and ISA Metrics (a five-dimensional orthogonal lens for performance, security, and efficiency). It provides a CLI for validating, versioning, deploying, and inspecting artifacts, with built-in support for domain-specific packs. Designed for reproducibility, transparency, and cross-industry applicability, ISA Fabric excels in areas like cybersecurity threat intelligence and forensics, where it benchmarks strongly against standards like CIS Controls v8.
