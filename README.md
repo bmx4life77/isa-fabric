@@ -1,3 +1,5 @@
+![ISA Pipeline Status](https://img.shields.io/badge/ISA%20Pipeline-Regime%20Aware%20v0.1-blueviolet?style=for-the-badge)
+
 # **📘 README.md — ISA Fabric**  
 *A unified, modular ecosystem for semantic annotations (NatSpec++) and orthogonal metrics (ISA Metrics), enabling measurement, benchmarking, and governance across domains like cybersecurity and beyond.*
 
