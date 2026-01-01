@@ -1,3 +1,5 @@
+![Glossary Status](https://img.shields.io/badge/Glossary-Updated%20for%20Regime%20Spec-green?style=flat-square)
+
 For governance details, see:
 [Genesis Governance Constitution](./governance/Genesis-Constitution.md)
 
