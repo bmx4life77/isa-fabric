@@ -1,4 +1,4 @@
-# **📘 README.md — ISA Fabric** 
+# **📘 README.md — ISA Fabric**  
 *A unified, modular ecosystem for semantic annotations (NatSpec++) and orthogonal metrics (ISA Metrics), enabling measurement, benchmarking, and governance across domains like cybersecurity and beyond.*
 
 ISA Fabric is the comprehensive framework combining NatSpec++ (machine-readable tags for systems) and ISA Metrics (a five-dimensional orthogonal lens for performance, security, and efficiency). It provides a CLI for validating, versioning, deploying, and inspecting artifacts, with built-in support for domain-specific packs. Designed for reproducibility, transparency, and cross-industry applicability, ISA Fabric excels in areas like cybersecurity threat intelligence and forensics, where it benchmarks strongly against standards like CIS Controls v8.
@@ -11,7 +11,19 @@ This project is ideal for developers, researchers, and teams seeking:
 
 ISA Fabric is more than tools—it's a foundation for measurable, adaptive systems.
 
----
+## 📘 Governance
+
+ISA Fabric uses a meritocratic, metrics-driven governance system defined in the
+[Genesis Governance Constitution](./docs/governance/Genesis-Constitution.md).
+
+This includes:
+- Roles & responsibilities
+- Proposal lifecycle
+- Impact Profiles
+- Thresholds (<33% BFT, ≥40% Collusion)
+- Emergency protocols
+- Lens Benchmarking & Calibration
+- RASUV meta-lens
 
 # **✨ Features**
 
@@ -26,14 +38,14 @@ Enforces Zod schemas for envelopes, profiles, models, and artifacts before deplo
 
 ### **Versioned Deployments**
 Artifacts are timestamped, versioned, and stored in a local registry:
-```
+
 .isa/deployments/
   envelopes/
   profiles/
   models/
   artifacts/
   active/
-```
+
 
 ### **Modular CLI**
 The `isa` command offers intuitive workflows for deployment, benchmarking, and more. Run `isa --help` for an overview (detailed below).
@@ -56,6 +68,26 @@ Run benchmarks on datasets (e.g., Cloudflare DDoS) to generate envelopes, scores
 
 ---
 
+# **📌 README.md Reference Snippet**
+
+
+### Regime-Aware Scoring (Advanced)
+
+The ISA Metrics pipeline includes a regime-aware scoring layer that adapts  
+composite weights and indicator behavior based on system stress conditions.
+
+This includes:
+
+- Regime Score **R** (baseline / transitional / stressed)
+- Dynamic ESI weighting
+- Volatility-gated MACD behavior
+- Cross-run drift percentile benchmarking
+
+For full details, see:  
+**`docs/pipeline-regime-spec.md`**
+
+---
+
 # **🧩 Dependencies & Environment Requirements**  
 *A practical guide to maintaining stability in ISA Fabric's TypeScript-based ecosystem.*
 
@@ -73,9 +105,9 @@ On Windows, use WSL2 for best results.
 
 ### **Required npm Behavior**
 Use:
-```
+
 npm install --legacy-peer-deps
-```
+
 
 This resolves peer dependency conflicts from libraries like Zod and TypeScript. Avoid `--force`, as it creates unstable builds.
 
@@ -102,30 +134,30 @@ Common issues if mismatched:
 
 # **📦 Installation**
 
-```
+
 rm -rf node_modules
 rm package-lock.json
 npm cache verify
 npm install --legacy-peer-deps
 npm run build
-```
+
 
 ---
 
 # **🚀 Usage**
 
-```
+
 isa deploy envelope <file>
 isa deploy profile <file>
 isa deploy model <file>
 isa deploy artifact <file>
 isa deploy list
 isa benchmark run <file> [--profile <name>]
-```
+
 
 **CLI Overview with --help**:
 Run `isa --help` to see available commands:
-```
+
 Usage: isa [options] [command]
 
 ISA Metrics unified CLI
@@ -143,18 +175,18 @@ Commands:
   security        Security framework compatibility (CIS, MITRE, ISO, NIST, etc.)
   gcs             Golden Calibration Series tools
   help [command]  display help for command
-```
+
 
 For subcommand details, e.g., `isa benchmark --help` or `isa deploy --help`.
 
 **Example Benchmark (Cybersecurity Use Case)**:
 Run on a DDoS dataset:
-```
+
 isa benchmark run ./data/cloudflare/cloudflare_ddos_daily.json --profile cloudflare
-```
+
 
 Output (simplified from terminal logs):
-```
+
 Running full benchmark on: ./data/cloudflare/cloudflare_ddos_daily.json
 Using profile: cloudflare
 Benchmark completed.
@@ -172,7 +204,7 @@ Scores: {
 }
 Insights: { ... }  # Drivers, stressors, balance, trajectory
 Narrative: { ... }  # Human-readable summaries
-```
+
 
 This demonstrates ISA Fabric's strength in threat intelligence: Scores reflect real-world strain under attack, with narratives providing actionable insights.
 
@@ -183,41 +215,41 @@ This demonstrates ISA Fabric's strength in threat intelligence: Scores reflect r
 Common issues and fixes, based on real errors from development logs:
 
 ### **Invalid Metrics Format**
-```
+
 Error: Invalid metrics format: expected { time_series: [...] } or { series: [...] }
     at loadMetrics (/path/to/loadMetrics.js:81:11)
     ...
-```
+
 **Fix**: Ensure input JSON follows the expected structure (e.g., wrap data in `time_series`). Clean and rebuild: `npm run clean && npm run build`.
 
 ### **TypeScript Compiler Errors**
-```
+
 src/cli/commands/benchmark.ts:76:43 - error TS2345: Argument of type '(number | undefined)[]' is not assignable to parameter of type 'number[]'.
-```
+
 **Fix**: Check array types in code—ensure no undefined values. Update dependencies with `--legacy-peer-deps` and rebuild.
 
 ### **Hardhat/Ethers Mismatch**
-```
+
 Error: hardhat-ethers requires ethers v5.x
-```
+
 **Fix**: Verify package versions match the known-good set. Reinstall with `npm install --legacy-peer-deps`.
 
 ### **Node Version Issues**
-```
+
 ERR_MODULE_NOT_FOUND
-```
+
 **Fix**: Upgrade to Node.js 20.19.6+. Use nvm for management.
 
 ### **npm Peer Conflicts**
-```
+
 ERESOLVE unable to resolve dependency tree
-```
+
 **Fix**: Always use `npm install --legacy-peer-deps`.
 
 ### **Terminal-Specific Errors (e.g., Git Bash)**
-```
+
 TS2304: Cannot find name 'file'. Did you mean 'File'?
-```
+
 **Fix**: Switch to PowerShell or WSL2—Git Bash causes path/resolution issues.
 
 For persistent issues, check logs and rebuild. Report bugs via GitHub Issues with full error traces.
@@ -346,17 +378,17 @@ Configure your system for optimal performance.
 1. Install WSL2: `wsl --install`.
 2. Install Ubuntu 24.04+.
 3. Install Node 20.19.6+ inside WSL via nvm:
-   ```
+   
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
    nvm install 20.19.6
-   ```
+   
 4. Clone and build:
-   ```
+   
    git clone <repo>
    cd <repo>
    npm install --legacy-peer-deps
    npm run build
-   ```
+   
 
 ---
 
@@ -364,10 +396,10 @@ Configure your system for optimal performance.
 
 1. Install Node 20.19.6+ via official installer or nvm-windows.
 2. Build:
-   ```
+   
    npm install --legacy-peer-deps
    npm run build
-   ```
+   
 
 ---
 
@@ -375,21 +407,21 @@ Configure your system for optimal performance.
 
 1. Install Node 20.19.6+ via nvm or package manager.
 2. Build:
-   ```
+   
    npm install --legacy-peer-deps
    npm run build
-   ```
+   
 
 ---
 
 # **macOS Setup**
 
 1. Install Node 20.19.6+:
-   ```
+   
    brew install node@20
-   ```
+   
 2. Build:
-   ```
+   
    npm install --legacy-peer-deps
    npm run build
-   ```
+   
