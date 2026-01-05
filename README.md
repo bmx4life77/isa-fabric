@@ -2,7 +2,7 @@
 
 *A unified, modular ecosystem for semantic annotations (NatSpec++) and orthogonal metrics (ISA Metrics), enabling measurement, benchmarking, and governance across domains like cybersecurity and beyond.*
 
-ISA Fabric is a domain-agnostic metrics framework designed to measure, benchmark, forecast, and optimize complex systems across industries such as blockchain, cybersecurity, finance, healthcare, and more. It leverages ISA Metrics—a computational governance system based on pillars like β (efficiency ratio), VU (concurrency pressure), ι (gas/intrinsic efficiency), φ (integration score), and ψ₅ (security posture)—to provide quantifiable insights into system stability, performance, and risks. These pillars are decomposed using RASUV sub-metrics (Rate, Amplitude, Spread, Uniformity, Variance) for ψ₅, enabling orthogonal assessments via weighted arithmetic and geometric means.
+ISA Fabric is a domain-agnostic metrics framework designed to measure, benchmark, forecast, and optimize complex systems across industries such as blockchain, cybersecurity, finance, healthcare, aerospace, and more. It leverages ISA Metrics—a computational governance system based on pillars like β (efficiency ratio), VU (concurrency pressure), ι (gas/intrinsic efficiency), φ (integration score), and ψ₅ (security posture)—to provide quantifiable insights into system stability, performance, and risks. These pillars are decomposed using RASUV sub-metrics (Rate, Amplitude, Spread, Uniformity, Variance) for ψ₅, enabling orthogonal assessments via weighted arithmetic and geometric means.
 
 The framework supports reproducibility through NatSpec++ annotations, regime classification (e.g., baseline, transitional, stressed), and composites like ESI (Efficiency Stability Index) and SE (System Efficiency). It integrates with tools for diagnostics, envelope computation (e.g., wavelet-based stability envelopes), and benchmarking against standards like CIS Controls v8, achieving high compliance scores (e.g., 0.909 overall index in benchmarks).
 
@@ -78,14 +78,6 @@ Each includes profiles, envelopes, models, and artifacts for real-world applicat
 
 ### Benchmarking and Simulation
 Run benchmarks on datasets (e.g., Cloudflare DDoS or `network-defense.json`) to generate envelopes, scores, insights, and narratives. Supports profiles for domain-specific tuning, and can be used as a repeatable scoring system for forensic workflow stability and coherence.
-
-Ah, I see why you’re asking — and you’re not missing anything, Louis.  
-The **“Versioned Deployments” section isn’t a standalone section in your README yet**. It *is* mentioned in your Features list, but it doesn’t exist as its own dedicated header.
-
-That’s why you couldn’t find a place to insert the Deployment Registry diagram.
-
-Let’s fix that cleanly and intentionally.
-
 
 ## 📦 Versioned Deployments
 
@@ -202,7 +194,6 @@ Common issues if mismatched:
 
 ### Recommended Terminals
 - **Windows**: WSL2 (Ubuntu) or PowerShell—reliable for builds and CLI.
-- **Avoid Git Bash**: Causes permissions issues, Hardhat failures, and path errors (e.g., `TS2304: Cannot find name 'file'`).
 - **Linux/macOS**: Native terminals work flawlessly.
 
 ## Installation
@@ -215,6 +206,7 @@ Common issues if mismatched:
 2. **Build the Project**:
    - Run: `npm run build`
      - This compiles TypeScript files to JavaScript in the `dist/` directory.
+     - Add this to your 'scripts' in your code: "build": "tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/isaCli.js" (this eliminates permission issues in the Ubuntu terminal for Windows WSL users)
 
 3. **Clean the Workspace (Optional)**:
    - Run: `npm run clean`
@@ -371,11 +363,11 @@ ERESOLVE unable to resolve dependency tree
 ```
 **Fix**: Always use `npm install --legacy-peer-deps`.
 
-### Terminal-Specific Errors (e.g., Git Bash)
+### Terminal-Specific Errors
 ```
 TS2304: Cannot find name 'file'. Did you mean 'File'?
 ```
-**Fix**: Switch to PowerShell or WSL2—Git Bash causes path/resolution issues.
+**Fix**: Switch to PowerShell or WSL2.
 
 For persistent issues, check logs and rebuild. Report bugs via GitHub Issues with full error traces.
 
