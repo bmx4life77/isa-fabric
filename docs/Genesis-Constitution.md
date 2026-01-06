@@ -169,7 +169,9 @@ CompositeImpact = (DomainImpact + Adaptability - Penalties) × Decay
 
 # **Article IV — Thresholds**
 
-Thresholds protect the system from instability, capture, and rushed decisions. Thresholds may be dynamically adjusted by Meta-Governance based on participant growth or system health scores, with safeguards against frequent changes (e.g., quarterly reviews only).
+## **Thresholds protect the system from instability, capture, and rushed decisions.** 
+
+## **Thresholds may be dynamically adjusted by Meta-Governance based on participant growth or system health scores, with safeguards against frequent changes (e.g., quarterly reviews only).**
 
 ## **1. Byzantine Safety Threshold (< 33%)**
 
@@ -205,6 +207,179 @@ If **40% or more** of governance participants exhibit:
 - Meta-Governance review  
 
 This is the “danger zone” where coordinated influence is likely.
+
+## **Thresholds & Scoring Base Definitions (Clarifications & Structural Alignment)**
+
+2.1 Base Scoring Definitions (New Subsection)
+
+All governance thresholds rely on a shared scoring foundation.
+
+These definitions must be consistent across Articles III (Impact Profiles), IV (Eligibility), and X (Intervention Playbook).
+
+2.1.1 Composite Impact Score (CIS)
+
+The CIS is the primary value used for governance eligibility and threshold checks.
+
+CIS = (DomainImpact + Adaptability - Penalties) × Decay
+
+This ensures that:
+
+  * contributions matter
+
+  * coherence matters
+
+  * recency matters
+
+  * integrity matters
+
+2.1.2 System Health Score (SHS)
+
+The SHS is derived from:
+
+  * ψ₅ (security posture)
+
+  * σ (volatility)
+
+  * divergence
+
+  * regime score R
+
+Formula:
+
+SHS = w1·ψ₅_norm + w2·σ_norm + w3·div_norm + w4·R
+
+ This score is used in:
+
+  * Article IV (Thresholds)
+
+  * Article X (Intervention Playbook)
+
+  * Emergency Protocols
+
+2.1.3 Byzantine Thresholds (dBFT Integration)
+
+The governance system inherits the following Byzantine boundaries:
+
+  * < 33% — safe, no adversarial majority
+
+  * ≥ 33% and < 40% — transitional, elevated risk
+
+  * ≥ 40% — adversarial or anomalous state
+
+These thresholds apply to:
+
+  * voting integrity
+
+  * anomaly detection
+
+  * emergency activation
+
+  * proposal gating
+
+ ## **Governance Thresholds (Clarified & Unified)**
+
+This section ensures that thresholds across Articles III, IV, and X use the same definitions and scoring bases.
+
+2.2.1 Participation Threshold
+
+Minimum CIS required to submit proposals or comments.
+
+CIS ≥ T_participation
+
+2.2.2 Reviewer Threshold
+
+Minimum CIS + domain relevance required to review proposals.
+
+CIS ≥ T_reviewer
+DomainImpact(domain) ≥ D_relevance
+
+2.2.3 Approver Threshold
+
+Higher threshold ensuring domain mastery and cross‑domain coherence.
+
+CIS ≥ T_approver
+Adaptability ≥ A_min
+
+2.2.4 Steward Threshold
+
+Highest non‑Meta‑Governance role.
+
+CIS ≥ T_steward
+SHS ≥ S_min
+
+2.2.5 Meta‑Governance Threshold
+
+Reserved for systemic oversight.
+
+CIS ≥ T_meta
+SHS ≥ S_meta
+No incoherence penalties in last N days
+
+2.3 Threshold Behavior Under System Stress (New Subsection)
+
+2.3.1 Threshold Elevation Under Stress
+
+When SHS drops below a defined boundary:
+
+If SHS < S_stress:
+    T_reviewer ↑
+    T_approver ↑
+    T_steward ↑
+
+This prevents low‑quality or adversarial influence during instability.
+
+2.3.2 Threshold Relaxation Under Stability
+
+When SHS remains stable for a defined window:
+
+If SHS ≥ S_stable for W days:
+    T_participation ↓
+    T_reviewer ↓
+
+This encourages broader participation during healthy periods.
+
+2.4 Threshold Transparency (New Requirement)
+All thresholds must be:
+
+  * publicly visible
+
+  * versioned
+
+  * documented in the Constitution
+
+  * displayed in the governance dashboard
+
+This ensures fairness and predictability.
+
+2.5 Threshold Drift Prevention (New Mechanism)
+
+Thresholds cannot change arbitrarily.
+
+2.5.1 Drift Guard
+
+Thresholds may only change if:
+
+  * SHS crosses a boundary
+
+  * Meta‑Governance approves
+
+  * or a recalibration proposal passes
+
+2.5.2 Threshold Lineage
+
+All threshold changes must be recorded with:
+
+  * timestamp
+
+  * rationale
+
+  * SHS snapshot
+
+  * proposer
+
+  * approver
+
+This creates a permanent audit trail.
 
 ## **3. Clarification**
 
@@ -1269,5 +1444,6 @@ Upon completion, all transitional allowances expire, and the Constitution applie
 ### **Section 4 — Enduring Authority**
 
 Following the conclusion of the Genesis Phase, this Constitution stands as the authoritative governance framework of the Collective. Amendments, additions, or new Articles may be introduced in accordance with Article IX, ensuring that the governance system remains adaptive, resilient, and capable of evolving alongside the Collective.
+
 
 
