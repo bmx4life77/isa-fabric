@@ -86,6 +86,85 @@ Roles are earned and maintained through Impact Profiles, not appointed permanent
 
 Mental Model for Non-Technical Participants: Think of Impact as a "contribution battery"—it charges slowly with quality work (e.g., balanced across pillars) and drains if inactive. No single action "wins"; consistency across lenses (like efficiency and security) builds real influence. Use the Simplified Impact Calculator (Appendix C) for previews without full math exposure.
 
+1. Impact Profiles — Transparency, Coherence, and Scoring Mechanics
+
+1.1 Transparency Requirements (New Clause)
+Every participant must have access to a clear, real‑time breakdown of their Impact Profile, including:
+
+Domain Contributions (per domain, weighted by recency)
+
+Cross‑Domain Adaptability Score
+
+Decay Factor (time‑weighted influence reduction)
+
+Incoherence Penalties (if applicable)
+
+Composite Impact Score (final value used for governance thresholds)
+
+This ensures that participants understand how their influence is derived and can adjust their behavior accordingly.
+
+1.2 Cross‑Domain Adaptability (Clarification)
+Cross‑domain adaptability measures a participant’s ability to contribute meaningfully across multiple governance domains without causing semantic or structural drift.
+
+It is computed using:
+
+Adaptability = (# of domains with positive contribution) 
+               × (consistency factor) 
+               × (recency weighting)
+
+Where:
+
+  * Consistency factor penalizes contradictory or incoherent contributions
+
+  * Recency weighting ensures recent contributions matter more than historical ones
+
+This prevents siloed influence and rewards contributors who strengthen the system holistically.
+
+1.3 Incoherence Penalties (New Definition)
+Incoherence penalties apply when a participant’s contributions across domains:
+
+  * contradict established semantics
+
+  * introduce structural drift
+
+  * conflict with previously approved domain definitions
+
+  * or create measurable correlation creep
+
+Penalty formula:
+
+Penalty = (severity × frequency × domain impact)
+
+Where:
+
+  * severity = magnitude of contradiction
+
+  * frequency = number of occurrences in a rolling window
+
+  * domain impact = weight of the affected domain
+
+This ensures that influence is aligned with system integrity.
+
+1.4 Decay Mechanics (Clarification)
+Decay ensures that inactive participants do not retain disproportionate influence.
+
+Decay is applied as:
+
+EffectiveImpact = RawImpact × e^(-λ × inactivity_days)
+
+Where:
+
+λ is the decay constant (governance‑set)
+
+inactivity_days is the number of days since last meaningful contribution
+
+This keeps the governance system dynamic and prevents stagnation.
+
+1.5 Composite Impact Score (Final Output)
+The final score used for governance thresholds is:
+
+CompositeImpact = (DomainImpact + Adaptability - Penalties) × Decay
+
 ---
 
 # **Article IV — Thresholds**
@@ -1190,4 +1269,5 @@ Upon completion, all transitional allowances expire, and the Constitution applie
 ### **Section 4 — Enduring Authority**
 
 Following the conclusion of the Genesis Phase, this Constitution stands as the authoritative governance framework of the Collective. Amendments, additions, or new Articles may be introduced in accordance with Article IX, ensuring that the governance system remains adaptive, resilient, and capable of evolving alongside the Collective.
+
 
