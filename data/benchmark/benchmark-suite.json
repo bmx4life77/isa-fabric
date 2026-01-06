@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "EVM serial baseline",
+    "engine": "evm-baseline",
+    "ops": 5000,
+    "shards": 1,
+    "notes": "Standard serial Ethereum EVM execution baseline."
+  },
+  {
+    "id": 2,
+    "name": "ISA Fabric (4 shards)",
+    "engine": "isa-fabric",
+    "ops": 5000,
+    "shards": 4,
+    "notes": "Prototype ISA Fabric executor with 4 logical shards."
+  },
+  {
+    "id": 3,
+    "name": "ISA Fabric (8 shards)",
+    "engine": "isa-fabric",
+    "ops": 5000,
+    "shards": 8,
+    "notes": "High-parallelism configuration for stress testing."
+  }
+]
