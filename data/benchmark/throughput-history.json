@@ -1,0 +1,23 @@
+[
+  {
+    "name": "EVM serial baseline",
+    "samples": [
+      20,
+      20
+    ]
+  },
+  {
+    "name": "ISA Fabric (4 shards)",
+    "samples": [
+      80,
+      80
+    ]
+  },
+  {
+    "name": "ISA Fabric (8 shards)",
+    "samples": [
+      160,
+      160
+    ]
+  }
+]

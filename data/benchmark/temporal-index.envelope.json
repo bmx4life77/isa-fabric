@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "createdAt": "2025-12-30T21:20:05.328Z",
+  "domain": "temporal",
+  "name": "Temporal Index Benchmark",
+  "metrics": {
+    "beta": 0.9897119341563787,
+    "vu": 0.01028806584362134,
+    "iota": 0.99039780521262,
+    "phi": 0.9814814814814815,
+    "psi5": 0.4996570644718793
+  },
+  "input": {
+    "pointCount": 3,
+    "timeRange": {
+      "start": "2025-11-29T11:56:16.058Z",
+      "end": "2025-11-29T11:56:18.058Z"
+    }
+  },
+  "insights": [
+    "System shows high efficiency (β).",
+    "Security posture (ψ₅) appears weak; additional controls are recommended."
+  ]
+}

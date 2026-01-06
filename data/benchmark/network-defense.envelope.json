@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "createdAt": "2026-01-06T07:28:19.403Z",
+  "domain": "cybersecurity",
+  "name": "Network Defense Threat Activity",
+  "metrics": {
+    "beta": 0.8787878787878788,
+    "vu": 0.12121212121212117,
+    "iota": 0.4868686868686868,
+    "phi": 0.7636363636363637,
+    "psi5": 0.695959595959596
+  },
+  "input": {
+    "pointCount": 3,
+    "timeRange": {
+      "start": "2025-11-29T12:00:00.000Z",
+      "end": "2025-11-29T12:00:02.000Z"
+    }
+  },
+  "insights": [
+    "System shows high efficiency (β).",
+    "Resilience (ι) is weak; recovery and stability may be at risk."
+  ]
+}
