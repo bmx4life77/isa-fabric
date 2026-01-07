@@ -1,0 +1,24 @@
+{
+  "normalization": "minmax",
+  "regime_thresholds": {
+    "r_low": 0.3,
+    "r_high": 0.7
+  },
+  "weights": {
+    "baseline": { "VI": 0.30, "MI": 0.25, "CRI": 0.25, "CBI": 0.20 },
+    "stressed": { "VI": 0.40, "MI": 0.15, "CRI": 0.30, "CBI": 0.15 },
+    "transitional": { "VI": 0.35, "MI": 0.20, "CRI": 0.25, "CBI": 0.20 }
+  },
+  "macd": {
+    "base_weight": 0.15,
+    "volatility_low": 0.1,
+    "volatility_high": 0.6
+  },
+  "windows": {
+    "rsi": 14,
+    "sigma": 20,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9
+  }
+}
