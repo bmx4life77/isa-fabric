@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MethodMetadata",
+  "type": "object",
+  "properties": {
+    "selector": { "type": "string" },
+    "signature": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["selector", "signature"]
+}
