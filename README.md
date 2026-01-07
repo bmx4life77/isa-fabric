@@ -1,4 +1,5 @@
 # ISA Fabric README.md v0.2.2
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18168443.svg)](https://doi.org/10.5281/zenodo.18168443)
 
 *A unified, modular ecosystem for semantic annotations (NatSpec++) and orthogonal metrics (ISA Metrics), enabling measurement, benchmarking, and governance across domains like cybersecurity and beyond.*
 
