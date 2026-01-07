@@ -94,4 +94,7 @@ A governance steward
 Start with the Macro‑State Schema → then EIP‑XXXX → then the Constitution.
 
 A researcher
+
 Start with EIP‑XXXX → then the derivation formulas → then the calibration datasets.
+
+**Archived Release:** https://doi.org/10.5281/zenodo.18168443
