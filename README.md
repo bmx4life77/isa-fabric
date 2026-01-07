@@ -667,3 +667,12 @@ Each run produces:
 **Uncertainty Band (ψ)** — The range of possible values for a metric.  
 **Update Wave** — A controlled propagation of changes.  
 **Volatility** — A measure of instability in macro-states.
+
+## Citation
+
+This project is archived on Zenodo:
+
+kidcrypto. (2026). *bmx4life77/isa-fabric: ISA Fabric v0.3.3 — Governance Refinement & Calibration Integration (v0.3.3).* Zenodo. https://doi.org/10.5281/zenodo.18168443
+
+For BibTeX, CSL, and other formats, see the Zenodo record.
+
