@@ -14,3 +14,7 @@ This documentation is intentionally structured for long-term growth. Some sectio
 - **glossary.md** — Full glossary of ISA Metrics, NatSpec++, and governance terms.
 
 More content will be added as the system matures.
+
+**Archived Release:** https://doi.org/10.5281/zenodo.18168443
+
+
