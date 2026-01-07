@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isa.metrics/schemas/isa-gcs.schema.json",
+  "title": "ISA Metrics Golden Calibration Series (GCS) File",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "domain",
+          "pillars",
+          "rasuv",
+          "framework_indices",
+          "expected"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "domain": { "type": "string" },
+          "subdomain": { "type": "string" },
+          "description": { "type": "string" },
+          "pillars": {
+            "type": "object",
+            "required": ["beta", "VU", "iota", "phi"],
+            "properties": {
+              "beta": { "type": "number", "minimum": 0, "maximum": 1 },
+              "VU": { "type": "number", "minimum": 0, "maximum": 1 },
+              "iota": { "type": "number", "minimum": 0, "maximum": 1 },
+              "phi": { "type": "number", "minimum": 0, "maximum": 1 },
+              "psi5_local": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "additionalProperties": false
+          },
+          "rasuv": {
+            "type": "object",
+            "required": ["R", "A", "S", "U", "V"],
+            "properties": {
+              "R": { "type": "number", "minimum": 0, "maximum": 1 },
+              "A": { "type": "number", "minimum": 0, "maximum": 1 },
+              "S": { "type": "number", "minimum": 0, "maximum": 1 },
+              "U": { "type": "number", "minimum": 0, "maximum": 1 },
+              "V": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "additionalProperties": false
+          },
+          "psi_family": {
+            "type": "object",
+            "properties": {
+              "psi1": { "type": "number", "minimum": 0, "maximum": 1 },
+              "psi2": { "type": "number", "minimum": 0, "maximum": 1 },
+              "psi3": { "type": "number", "minimum": 0, "maximum": 1 },
+              "psi4": { "type": "number", "minimum": 0, "maximum": 1 },
+              "psi5": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "required": ["psi1", "psi2", "psi3", "psi4", "psi5"],
+            "additionalProperties": false
+          },
+          "framework_indices": {
+            "type": "object",
+            "required": [
+              "iso27001",
+              "nist_csf",
+              "cis_controls",
+              "mitre_attck"
+            ],
+            "properties": {
+              "iso27001": { "type": "number", "minimum": 0, "maximum": 1 },
+              "nist_csf": { "type": "number", "minimum": 0, "maximum": 1 },
+              "cis_controls": { "type": "number", "minimum": 0, "maximum": 1 },
+              "mitre_attck": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "additionalProperties": false
+          },
+          "expected": {
+            "type": "object",
+            "required": ["isa_index", "system_efficiency", "cyber_index_base"],
+            "properties": {
+              "isa_index": { "type": "number", "minimum": 0, "maximum": 1 },
+              "system_efficiency": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "psi5_integrated": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cyber_index_base": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cyber_index_psi_weighted": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["version", "scenarios"],
+  "additionalProperties": false
+}
