@@ -1,0 +1,133 @@
+<svg width="900" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="900" height="420" fill="#0b0c10"/>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" fill="#f8f8f8"
+        font-family="monospace" font-size="20">
+    ISA Stability Envelope · β, ψ₅ and μ
+  </text>
+
+  <!-- Axes -->
+  <line x1="70" y1="360" x2="840" y2="360" stroke="#aaaaaa" stroke-width="1.2"/>
+  <line x1="70" y1="80" x2="70" y2="360" stroke="#aaaaaa" stroke-width="1.2"/>
+
+  <!-- Axis labels -->
+  <text x="455" y="390" text-anchor="middle" fill="#cccccc"
+        font-family="monospace" font-size="12">
+    time →
+  </text>
+  <text x="20" y="220" text-anchor="middle" fill="#cccccc"
+        font-family="monospace" font-size="12"
+        transform="rotate(-90 20 220)">
+    metric value
+  </text>
+
+  <!-- Stability envelope band (for β) -->
+  <polygon
+    points="
+      90,180  170,185  250,190  330,195  410,200
+      490,205 570,210 650,215 730,220 810,225
+      810,250 730,247 650,244 570,241 490,238
+      410,235 330,232 250,229 170,226 90,223
+    "
+    fill="#1f406880" stroke="#3867d6" stroke-width="1"
+  />
+  <text x="830" y="210" text-anchor="start" fill="#7fb6ff"
+        font-family="monospace" font-size="11">
+    β envelope
+  </text>
+
+  <!-- μ_β horizontal line -->
+  <line x1="85" y1="210" x2="840" y2="210"
+        stroke="#4cd137" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <text x="78" y="208" text-anchor="end" fill="#4cd137"
+        font-family="monospace" font-size="11">
+    μβ
+  </text>
+
+  <!-- μ_ψ5 horizontal line -->
+  <line x1="85" y1="260" x2="840" y2="260"
+        stroke="#e1b12c" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <text x="78" y="258" text-anchor="end" fill="#e1b12c"
+        font-family="monospace" font-size="11">
+    μψ₅
+  </text>
+
+  <!-- β(t) curve (monotone decay) -->
+  <polyline
+    points="
+      90,190  150,193  210,197  270,202  330,208
+      390,215 450,222 510,230 570,239 630,249
+      690,260 750,272 810,285
+    "
+    fill="none" stroke="#00a8ff" stroke-width="2.2"
+  />
+  <text x="815" y="290" text-anchor="start" fill="#00a8ff"
+        font-family="monospace" font-size="11">
+    β(t)
+  </text>
+
+  <!-- ψ5(t) curve (defensive hump) -->
+  <polyline
+    points="
+      90,280  150,275  210,270  270,260  330,245
+      390,230 450,220 510,215 570,217 630,225
+      690,238 750,252 810,268
+    "
+    fill="none" stroke="#fbc531" stroke-width="2.2"
+  />
+  <text x="815" y="270" text-anchor="start" fill="#fbc531"
+        font-family="monospace" font-size="11">
+    ψ₅(t)
+  </text>
+
+  <!-- Volatility wavelet envelope band -->
+  <polygon
+    points="
+      90,305 150,300 210,295 270,292 330,290
+      390,289 450,290 510,293 570,297 630,302
+      690,308 750,315 810,323
+      810,335 750,332 690,328 630,324 570,321
+      510,319 450,318 390,318 330,319 270,321
+      210,324 150,328 90,333
+    "
+    fill="#e8411840" stroke="#e84118" stroke-width="1"
+  />
+  <text x="815" y="318" text-anchor="start" fill="#e84118"
+        font-family="monospace" font-size="11">
+    wavelet(vol)
+  </text>
+
+  <!-- μ annotations block -->
+  <rect x="100" y="90" width="280" height="80" rx="6" ry="6"
+        fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="115" y="110" fill="#f9fafb" font-family="monospace" font-size="12">
+    μβ  = mean β over window
+  </text>
+  <text x="115" y="126" fill="#f9fafb" font-family="monospace" font-size="12">
+    μψ₅ = mean ψ₅ (defensive posture)
+  </text>
+  <text x="115" y="142" fill="#9ca3af" font-family="monospace" font-size="11">
+    · μ anchors regime bands
+  </text>
+  <text x="115" y="158" fill="#9ca3af" font-family="monospace" font-size="11">
+    · envelopes expand/contract around μ
+  </text>
+
+  <!-- Regime zones (soft shading) -->
+  <rect x="70" y="80" width="770" height="65" fill="#10b98112"/>
+  <text x="80" y="95" fill="#6ee7b7" font-family="monospace" font-size="11">
+    Regime 1: stable · β high, ψ₅ low
+  </text>
+
+  <rect x="70" y="215" width="770" height="55" fill="#f9731612"/>
+  <text x="80" y="230" fill="#fca5a5" font-family="monospace" font-size="11">
+    Regime 2: defensive ridge · ψ₅↑, β↘
+  </text>
+
+  <rect x="70" y="270" width="770" height="90" fill="#ef444412"/>
+  <text x="80" y="285" fill="#fecaca" font-family="monospace" font-size="11">
+    Regime 3: oversaturated · β low, ψ₅ relaxing
+  </text>
+</svg>

@@ -1,0 +1,9 @@
+{
+  "type": "rl",
+  "version": "1.0.0",
+  "parameters": {
+    "learning_rate": 0.001,
+    "discount_factor": 0.99
+  },
+  "policy": "base64-encoded-policy-placeholder"
+}
