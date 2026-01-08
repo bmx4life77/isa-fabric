@@ -462,6 +462,96 @@ Run:
 npm install
 npm test
 ```
+## **IMPORTANT**
+
+# ⭐ Why NatSpec++ Needs a Documentation Section  
+Hardhat’s NatSpec parser is strict.  
+It only accepts:
+
+- official NatSpec tags  
+- custom tags that follow a very narrow naming rule  
+
+NatSpec++ introduces:
+
+- semantic layers  
+- benchmarking metadata  
+- governance annotations  
+- composite metrics  
+- ISA‑specific metadata  
+
+These are **not** part of Solidity’s official NatSpec spec, so Hardhat rejects them unless they’re wrapped correctly.
+
+## ⚠️ NatSpec++ Compatibility with Hardhat
+
+ISA Fabric and NatSpec++ extend Solidity’s documentation system with additional semantic tags such as:
+
+@natspec++
+@benchmark
+@governance
+@semantic-layer
+
+These tags are **not recognized by Hardhat**, and will cause compilation to fail with errors like:
+
+DocstringParsingError: Documentation tag @natspec++ not valid for contracts.
+DocstringParsingError: Invalid character in custom tag.
+
+### ✔ How to make NatSpec++ compatible with Hardhat
+
+Hardhat only accepts custom tags that follow this pattern:
+
+@custom:<lowercase-letters-and-hyphens-only>
+
+So NatSpec++ tags must be rewritten as:
+
+| Original Tag | Hardhat-Compatible Form |
+|--------------|--------------------------|
+| `@natspec++` | `@custom:natspecpp` |
+| `@benchmark` | `@custom:benchmark` |
+| `@governance` | `@custom:governance` |
+| `@semantic-layer=benchmarking` | `@custom:semantic-layer benchmarking` |
+
+### ❗ Important Rules
+
+- Custom tag names **cannot contain** `+`, `_`, uppercase letters, or numbers.  
+- The **text after the tag** can contain anything — only the tag name is restricted.  
+- This transformation is required for **any Hardhat-based workflow**, including:  
+  - `hardhat compile`  
+  - `hardhat test`  
+  - `hardhat verify`  
+  - Hardhat plugins that parse NatSpec  
+
+### ✔ Example
+
+#### ❌ Invalid (Hardhat will reject)
+/// @natspec++ v0.2 psi5:security-ratio=0.89
+/// @benchmark suite=parallel-dex
+/// @governance threshold=psi5:lt:0.3,se:gte:0.8
+
+
+#### ✔ Valid (Hardhat will accept)
+/// @custom:natspecpp v0.2 psi5:security-ratio=0.89
+/// @custom:benchmark suite=parallel-dex
+/// @custom:governance threshold=psi5:lt:0.3,se:gte:0.8
+
+
+# ⭐ Why this matters for ISA Fabric  
+NatSpec++ is a core part of ISA Fabric’s philosophy:
+
+- contracts describe their governance  
+- metrics are self‑documenting  
+- thresholds are embedded in code  
+- benchmarking metadata is extractable  
+- semantic layers are explicit  
+
+But Hardhat is not aware of these extensions.
+
+Documenting this ensures:
+
+- contributors don’t panic when Hardhat rejects tags  
+- NatSpec++ remains portable  
+- ISA Fabric stays developer‑friendly  
+- the ecosystem grows cleanly  
+
 
 ## 📄 License
 
