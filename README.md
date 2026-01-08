@@ -353,7 +353,7 @@ The project is actively in refinement, debugging, and stress testing phases. Exp
 
 For issues, check logs (e.g., npm debug logs) or open GitHub issues. Contributions are welcome to accelerate stability.
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 ### TypeScript Build Errors (e.g., TS2304)
 **Fix**: Upgrade to Node.js 20.19.6+. Use nvm for management.
@@ -371,6 +371,97 @@ TS2304: Cannot find name 'file'. Did you mean 'File'?
 **Fix**: Switch to PowerShell or WSL2.
 
 For persistent issues, check logs and rebuild. Report bugs via GitHub Issues with full error traces.
+
+## **ATTENTION**
+
+If ever Hardhat returns something like this: 
+
+"kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ npm run clean
+
+> natspecpp-fabric@1.0.0 clean
+> rm -rf artifacts cache dist && echo 'Workspace cleaned.'
+
+Workspace cleaned.
+kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ npm run build
+
+> natspecpp-fabric@1.0.0 build
+> tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/isaCli.js
+
+kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ npm test
+
+> natspecpp-fabric@1.0.0 test
+> npx hardhat test
+
+Segmentation fault (core dumped)
+
+kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ node-v
+
+node-v: command not found
+
+kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$" 
+
+Follow these steps, your system will NOT only RECOVER -it WILL LEVEL-UP. 
+
+### **Segmentation Fault (core dumped) when running `npm test` or Hardhat**
+This occurs when Node.js is **not installed inside WSL**, or when Node was installed via `apt` instead of `nvm`.
+
+**Symptoms:**
+- `Segmentation fault (core dumped)`
+- Hardhat crashes without showing a Solidity error
+- `node -v` returns “command not found”
+
+**Fix:**
+Install Node using NVM inside WSL:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install 18
+nvm use 18
+```
+
+Then reinstall dependencies:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+This resolves all Hardhat segmentation faults.
+
+---
+
+### **OpenZeppelin imports not found**
+If you see:
+
+```
+HH404: File @openzeppelin/contracts/... not found
+```
+
+Install the correct version:
+
+```bash
+npm install @openzeppelin/contracts@4.9.3 --legacy-peer-deps
+```
+
+This version includes:
+
+- `security/ReentrancyGuard.sol`
+- `access/AccessControl.sol`
+- `governance/TimelockController.sol`
+- `token/ERC20/utils/SafeERC20.sol`
+
+---
+
+### **TypeScript builds but Hardhat fails**
+This usually means the TypeScript engine is fine, but Solidity dependencies are missing.
+
+Run:
+
+```bash
+npm install
+npm test
+```
 
 ## 📄 License
 
