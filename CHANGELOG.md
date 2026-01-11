@@ -66,3 +66,46 @@ All notable changes to this project will be documented in this file.
 ### Notes
 - This is the first **governance‑grade**, **empirically calibrated**, and **Zenodo‑archived** release of ISA Fabric.
 - DOI: https://doi.org/10.5281/zenodo.18168443
+
+
+
+# **1. Full CHANGELOG Section (Release v0.3.3)**
+
+## **[0.3.3] — CLI Stabilization & Pipeline Alignment**
+
+### **CLI Architecture**
+- Fully aligned the CLI with the updated metrics, modulation, and governance engines.
+- Standardized command structure across all subsystems:
+  - `isa metrics evaluate`
+  - `isa governance run`
+  - `isa deploy list | history | inspect`
+  - `isa evaluate` (full pipeline)
+- Ensured consistent flag handling (`--domain`, `--input`, `--proposal`, `--id`).
+
+### **Executable & Developer Experience**
+- Added `"bin": { "isa": "./dist/src/cli/isaCli.js" }` to enable global CLI usage via `npm link`.
+- Ensured CLI entrypoint is executable during build (`chmod +x`).
+- Added npm scripts for all major CLI operations:
+  - `metrics:evaluate`
+  - `governance:run`
+  - `deploy:list`, `deploy:history`, `deploy:inspect`
+  - `evaluate` (full pipeline)
+  - `isa` (raw CLI access)
+
+### **Metrics Engine Integration**
+- Fixed missing telemetry edge‑case handling (drift, volatility, rolling cache).
+- Ensured `computeMetrics()` returns both `vu` (raw) and `VU` (normalized) to satisfy tests and modulation.
+- Stabilized drift computation for missing or short telemetry arrays.
+
+### **Modulation Layer**
+- Added `.macro` and `.raw` fields to modulated output for test compatibility and clarity.
+- Ensured modulation output satisfies `ModulatedOutput` interface and governance expectations.
+
+### **Role‑Aware Modulation**
+- Updated `roleAwareModulation` to accept both `"reviewer"` and `{ role: "reviewer" }`.
+- Added `.weights`, `.macro`, and `.role_adjusted` to output.
+- Ensured responsibility profiles load correctly and apply weighting.
+
+### **Build & Schema Integration**
+- Ensured schemas are copied into `dist/schemas` during build.
+- Verified CLI commands correctly load responsibility profiles, metrics profiles, and domain packs.
