@@ -109,3 +109,45 @@ All notable changes to this project will be documented in this file.
 ### **Build & Schema Integration**
 - Ensured schemas are copied into `dist/schemas` during build.
 - Verified CLI commands correctly load responsibility profiles, metrics profiles, and domain packs.
+
+## [Unreleased]
+
+### Added
+- Introduced full `isa datasets` command group:
+  - `--list` for scenario enumeration
+  - `--stats` for dataset metadata and metric overview
+  - `--scenario <name>` for generating individual or all synthetic datasets
+  - `--output <dir>` for custom output paths
+- Added synthetic dataset generator with five production scenarios:
+  - baseline_normal_7d
+  - adversarial_ddos_3d
+  - insider_threat_5d
+  - supply_chain_4d
+  - regulatory_change_10d
+- Added automatic manifest generation for dataset batches
+- Added dataset path resolver supporting:
+  - absolute paths
+  - relative paths
+  - fallback to `core/dataset/`
+  - directory resolution (latest JSON file)
+
+### Changed
+- Updated Theta forecasting pipeline:
+  - Replaced legacy asset‑based extractor with metric‑based extractor
+  - Added support for flat metric names (`beta`, `psi5`, `ESI`, etc.)
+  - Added support for domain‑prefixed metric paths (`finance.beta`)
+  - Improved error handling for missing metrics
+- Refactored `loadDataset` to use new resolver logic
+- Cleaned up CLI command registration for `forecast theta`
+
+### Fixed
+- Resolved ENOENT path issues when forecasting on generated datasets
+- Fixed metric extraction failures caused by outdated schema assumptions
+- Corrected CLI behavior for dataset paths outside `core/dataset/`
+- Ensured Theta engine correctly reads `entry.metrics` structure
+
+### Notes
+- Theta forecasting now fully operational across all synthetic scenarios
+- Forecasts validated for `beta`, `psi5`, `ESI`, and `divergence`
+- CLI, dataset engine, loader, extractor, and Theta pipeline now integrated end‑to‑end
+
