@@ -52,19 +52,120 @@ This Constitution establishes the foundational governance architecture, includin
 
 ---
 
-# **Article II — Proposal Lifecycle**
+# **Article II — Proposal Lifecycle (Rewritten with Section II.0 Integrated)**
 
-All proposals move through the following lifecycle:
+## **II.0 Canonical State Prerequisite**
 
-1. **Submission** (Contributor)  
-2. **Steward Review**  
-3. **Senior Steward Review**  
-4. **Reviewer Evaluation**  
-5. **Approver Decision**  
-6. **Finalization**  
-7. **Impact Scoring & Lineage Recording**
+### **II.0.1 Impact Profiles as Canonical State**
+Impact Profiles constitute the **canonical state representation** of every participant within Genesis Governance v4.0. They are the authoritative source of truth for contributor identity, capability, historical impact, and governance eligibility.
 
-Each stage has minimum time windows, role-based thresholds, and lens-based evaluation requirements.
+Roles, permissions, thresholds, proposal rights, and emergency authorities are **derived views** over the Impact Profile — not independent objects. No governance mechanism may store or maintain a parallel representation of participant state.
+
+### **II.0.2 Governance Consequence**
+All proposal lifecycle transitions — including creation, validation, deliberation, voting, execution, and post‑execution review — must reference the Impact Profile as the authoritative participant state.
+
+A proposal’s validity, eligibility, quorum requirements, and execution authority must be computed **directly from the Impact Profile**, ensuring:
+
+- state‑first governance  
+- traceable authority  
+- adaptive role derivation  
+- constitutional consistency with ISA Metrics GCS  
+
+### **II.0.3 Constitutional Rationale**
+Elevating Impact Profiles to canonical state ensures:
+
+- **Non‑collusive authority** — roles cannot be manipulated or self‑assigned  
+- **State integrity** — participant state is unified, auditable, and tamper‑resistant  
+- **Adaptive governance** — thresholds and permissions evolve with participant impact  
+- **Closed‑loop coherence** — governance decisions reflect real participant state  
+
+This prerequisite forms the structural foundation for the Proposal Lifecycle.
+
+---
+
+## **II.1 Proposal Creation**
+A proposal may be created by any participant whose Impact Profile satisfies the minimum eligibility criteria derived from canonical state. Eligibility includes:
+
+- minimum impact tier  
+- domain‑specific authority  
+- historical reliability  
+- absence of active sanctions  
+
+Proposal metadata must include:
+
+- intent  
+- scope  
+- affected domains  
+- required thresholds  
+- canonical state snapshot  
+
+---
+
+## **II.2 Proposal Validation**
+Before entering deliberation, a proposal undergoes validation:
+
+- structural validity  
+- canonical state alignment  
+- threshold correctness  
+- domain routing  
+- conflict detection  
+
+Validation must reference the Impact Profile of the proposer and all affected participants.
+
+---
+
+## **II.3 Deliberation Phase**
+Proposals enter a deliberation window during which:
+
+- participants review canonical state impacts  
+- narrative and Θ‑layer explanations may be attached  
+- domain experts may annotate risks  
+- Impact Profiles determine deliberation weight  
+
+Deliberation is informational only; no authority is exercised here.
+
+---
+
+## **II.4 Voting Phase**
+Voting rights and weights are derived from Impact Profiles:
+
+- impact tier determines voting power  
+- domain alignment determines relevance  
+- historical reliability modulates influence  
+
+Votes are recorded against canonical state snapshots to ensure traceability.
+
+---
+
+## **II.5 Execution Phase**
+Upon successful vote:
+
+- timelock scheduling  
+- canonical state revalidation  
+- ψ₅ and SE gating  
+- emergency override checks  
+
+Execution may proceed only if:
+
+- ψ₅ < ψ₅_max  
+- SE ≥ SE_min  
+- canonical state has not materially changed  
+- no emergency protocol is active  
+
+Execution is a **state transition**, not a procedural action.
+
+---
+
+## **II.6 Post‑Execution Review**
+After execution:
+
+- canonical state is updated  
+- Impact Profiles are recalculated  
+- GCS stability adjudication occurs  
+- calibration recommendations are generated  
+
+This closes the governance loop.
+
 
 ---
 
