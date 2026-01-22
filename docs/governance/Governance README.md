@@ -263,3 +263,5 @@ Genesis Governance is a principled, resilient, future‑proof governance archite
 - scale with the ecosystem  
 
 It is the foundation upon which ISA Fabric evolves — intentionally, safely, and transparently.
+
+**Archived Release:** https://doi.org/10.5281/zenodo.18168443
