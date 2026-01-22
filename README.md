@@ -1,56 +1,55 @@
-# ISA Fabric README.md v0.2.2
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18168443.svg)](https://doi.org/10.5281/zenodo.18168443)
+# ⭐ **ISA Fabric — README v0.3**  
+*A modular research framework for structured metrics, semantic annotations, and pre‑on‑chain security analysis.*
 
-*A unified, modular ecosystem for semantic annotations (NatSpec++) and orthogonal metrics (ISA Metrics), enabling measurement, benchmarking, and governance across domains like cybersecurity and beyond.*
+DOI [(doi.org in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.18168443")
 
-ISA Fabric is a domain-agnostic metrics framework designed to measure, benchmark, forecast, and optimize complex systems across industries such as blockchain, cybersecurity, finance, healthcare, aerospace, and more. It leverages ISA Metrics—a computational governance system based on pillars like β (efficiency ratio), VU (concurrency pressure), ι (gas/intrinsic efficiency), φ (integration score), and ψ₅ (security posture)—to provide quantifiable insights into system stability, performance, and risks. These pillars are decomposed using RASUV sub-metrics (Rate, Amplitude, Spread, Uniformity, Variance) for ψ₅, enabling orthogonal assessments via weighted arithmetic and geometric means.
+ISA Fabric is a **domain‑agnostic metrics and analysis framework** designed to measure, benchmark, and evaluate complex systems. It provides structured pipelines for:
 
-The framework supports reproducibility through NatSpec++ annotations, regime classification (e.g., baseline, transitional, stressed), and composites like ESI (Efficiency Stability Index) and SE (System Efficiency). It integrates with tools for diagnostics, envelope computation (e.g., wavelet-based stability envelopes), and benchmarking against standards like CIS Controls v8, achieving high compliance scores (e.g., 0.909 overall index in benchmarks).
+- semantic annotations (NatSpec++),  
+- orthogonal metrics (ISA Metrics),  
+- governance and proposal analysis,  
+- adversarial simulations,  
+- dataset generation,  
+- and stability forecasting.
 
-ISA Fabric is more than tools—it's a foundation for measurable, adaptive systems. This project is TypeScript-based, with future plans to incorporate Rust for Webhooks/APIs (e.g., for real-time execution) and Python for visualization (e.g., dashboards and spectral profiles).
+The framework is built for researchers, engineers, auditors, and governance professionals who need **reproducible, schema‑validated, versioned analysis workflows**.
 
-This project is ideal for developers, researchers, and teams seeking:
-- Structured, schema-validated workflows.
-- Reproducible deployments and versioning.
-- Quantifiable insights via orthogonal metrics (e.g., β for efficiency, ESI for overall stability, RASUV for risk).
-- Modular extensibility without legacy code or inheritance issues.
- 
-📊 System Architecture Overview
+---
 
--flowchart TD
+# 🌐 **What ISA Fabric Is**
 
-    A[Dataset<br/>(JSON, telemetry)] --> B[Indicators<br/>RSI, σ, MACD, FFT]
-    B --> C[ψ‑Family<br/>ψ₁ noise, ψ₂ delay, ψ₃ collusion, ψ₄ integrity, ψ₅ security]
-    C --> D[Regime Score R<br/>baseline / transitional / stressed]
-    D --> E[Composites<br/>ESI, SE, CRI, CBI]
-    E --> F[Results<br/>JSON, plots, summaries]
- 
+ISA Fabric is a **research substrate** — a structured environment for:
 
-## 📘 Governance
-ISA Fabric uses a meritocratic, metrics-driven governance system defined in the [Genesis Governance Constitution](./docs/governance/Genesis-Constitution.md).
+- analyzing proposals,  
+- computing metrics,  
+- generating envelopes,  
+- running adversarial simulations,  
+- and evaluating system stability.
 
-This includes:
-- Roles & responsibilities
-- Proposal lifecycle
-- Impact Profiles
-- Thresholds (<33% BFT, ≥40% Collusion)
-- Emergency protocols
-- Lens Benchmarking & Calibration
-- RASUV meta-lens
+It is **not** a governance system, standard, or authority layer.  
+It is a **toolbox** for structured analysis.
 
-## ✨ Features
+---
 
-### Semantic Annotations with NatSpec++
-Machine-readable tags for pillars, vectors, and dependencies (e.g., `@beta:commit-ratio=0.91`), enabling explicit, verifiable system descriptions.
+# 🚀 **Key Features**
 
-### Orthogonal Metrics with ISA Metrics
-Decomposes systems into five core pillars (β, ι, φ, VU, SE) with the ψ₅-family (RASUV) for stress and risk analysis. Supports arithmetic/geometric means for balanced or compounded analysis.
+### **NatSpec++ Semantic Annotations**  
+Machine‑readable metadata for metrics, governance thresholds, and system semantics.  
+Hardhat‑compatible via `@custom:<tag>` syntax.
 
-### Schema-Validated Artifacts
-Enforces Zod schemas for envelopes, profiles, models, and artifacts before deployment, ensuring integrity.
+### **ISA Metrics (β, ι, φ, VU, ψ₅)**  
+A modular metrics engine with:
 
-### Versioned Deployments
-Artifacts are timestamped, versioned, and stored in a local registry:
+- ψ‑family propagation  
+- RASUV decomposition  
+- regime classification  
+- composite indices (ESI, SE, CRI, CBI)
+
+### **Schema‑Validated Artifacts**  
+All envelopes, profiles, models, and datasets are validated with Zod schemas.
+
+### **Versioned Deployments**  
+Artifacts are stored in:
 
 ```
 .isa/deployments/
@@ -61,799 +60,182 @@ Artifacts are timestamped, versioned, and stored in a local registry:
   active/
 ```
 
-### Modular CLI
-The `isa` command offers intuitive workflows for deployment, benchmarking, and more. Run `isa --help` for an overview (detailed below).
+### **Modular CLI**  
+A unified CLI for metrics, governance, datasets, adversarial analysis, ISO alignment, and more.
 
-### Cybersecurity Domain Pack
-Pre-built structures for:
-- Network Defense
-- Application Security
-- Cloud Security
-- Identity & Access
-- Threat Intelligence
-- Incident Response
-- Cryptography
-- Supply Chain Security
+### **Cybersecurity Domain Pack**  
+Prebuilt structures for CIS Controls v8, MITRE ATT&CK, NIST CSF, and more.
 
-Each includes profiles, envelopes, models, and artifacts for real-world applications like DDoS analysis.
+---
 
-### Benchmarking and Simulation
-Run benchmarks on datasets (e.g., Cloudflare DDoS or `network-defense.json`) to generate envelopes, scores, insights, and narratives. Supports profiles for domain-specific tuning, and can be used as a repeatable scoring system for forensic workflow stability and coherence.
-
-## 📦 Versioned Deployments
-
-ISA Fabric stores all deployed artifacts in a structured, version‑aware local registry.  
-Each deployment (envelope, profile, model, artifact) is:
-
-- schema‑validated  
-- timestamped  
-- version‑incremented  
-- written to a predictable location  
-- tracked for activation  
-
-This ensures reproducibility, auditability, and contributor clarity.
-
-### **Deployment Registry Structure**
-
-```mermaid
-flowchart TD
-    A[.isa/] --> B[deployments/]
-    B --> C[envelopes/]
-    B --> D[profiles/]
-    B --> E[models/]
-    B --> F[artifacts/]
-    B --> G[active/]
-```
-
-Artifacts are written automatically when running:
+# 📁 **Project Structure**
 
 ```
-isa deploy envelope <file>
-isa deploy profile <file>
-isa deploy model <file>
+isa-fabric/
+├── src/                # Core TypeScript source
+├── dist/               # Compiled output
+├── docs/               # Extended documentation
+├── data/               # Sample datasets
+├── schemas/            # Zod schemas
+├── contracts/          # Solidity contracts with NatSpec++
+├── test/               # Mocha/Chai tests
+└── .isa/deployments/   # Versioned artifacts
 ```
 
-Each file is stored as:
+Advanced documentation (metrics, governance, NatSpec++, RASUV, etc.) has been moved to `docs/` for clarity.
 
-```
-<name>-v<version>.json
-```
+---
 
-Example:
+# 🧩 **Installation**
 
-```
-finance-dex-v3.json
-```
+### **Prerequisites**
+- Node.js **20.19.6+**  
+- npm (use `--legacy-peer-deps`)  
+- TypeScript  
+- Optional: Hardhat for Solidity workflows  
+- Recommended: WSL2 on Windows  
 
-
-## Getting Started
-
-1. **Clone or Download the Repository**:
-   - Clone via Git: `git clone https://github.com/bmx4life77/isa-fabric.git`
-   - Alternatively, download the ZIP file from the repository page: https://github.com/bmx4life77/isa-fabric.git
-   - Navigate to the project directory: `cd isa-fabric`
-
-2. **Prerequisites**:
-   - Node.js (v18+ recommended, specifically 20.19.6 or higher for modern ESM/CJS handling and stability) and npm (v8+).
-   - TypeScript knowledge for core development.
-   - Optional: Hardhat for Solidity/Ethereum integration (if working with blockchain metrics).
-   - For auditors and cybersecurity professionals: Familiarity with tools like Slither or Mythril for RASUV validation.
-   - Access to a terminal for CLI operations.
-
-## 🧩 Dependencies & Environment Requirements
-
-*A practical guide to maintaining stability in ISA Fabric's TypeScript-based ecosystem.*
-
-ISA Fabric is a TypeScript project with a CLI, schema validation, and optional integrations (e.g., Hardhat). Dependencies are sensitive due to interactions between TypeScript, Zod, and Node—mismatches can cause resolution errors or build failures.
-
-### Required Node.js Version
-- **Node.js 20.19.6 or higher** (for modern ESM/CJS handling and stability).
-
-Older versions may lead to:
-- Module resolution failures (e.g., `ERR_MODULE_NOT_FOUND`).
-- Compiler errors (e.g., `TS2304: Cannot find name 'detectBaseName'`).
-- Path inconsistencies or Hardhat crashes.
-
-On Windows, use WSL2 for best results.
-
-### Required npm Behavior
-Use:
+### **Install**
 ```
 npm install --legacy-peer-deps
-```
-This resolves peer dependency conflicts from libraries like Zod and TypeScript. Avoid `--force`, as it creates unstable builds.
-
-### Known-Good Dependency Set
-Tested configuration (from `package.json`):
-
-### Dependencies (Runtime):
-- `"commander": "^14.0.2"` – For CLI command parsing.
-- `"zod": "^4.2.1"` – For schema validation and type-safe data handling.
-
-### Dev Dependencies (Development and Testing):
-- `"@nomiclabs/hardhat-ethers": "^2.2.3"` – Ethereum integration for Hardhat.
-- `"@nomiclabs/hardhat-etherscan": "^3.1.8"` – For contract verification on Etherscan.
-- `"@nomiclabs/hardhat-waffle": "^2.0.6"` – Testing framework for Hardhat.
-- `"@typechain/ethers-v5": "^11.1.2"` – TypeChain for Ethers v5.
-- `"@typechain/hardhat": "^9.1.0"` – Hardhat plugin for TypeChain.
-- `"@types/chai": "^4.3.20"` – Type definitions for Chai.
-- `"@types/mocha": "^10.0.10"` – Type definitions for Mocha.
-- `"chai": "^4.3.10"` – Assertion library.
-- `"ethers": "^5.8.0"` – Ethereum library.
-- `"hardhat": "^2.27.0"` – Development environment for Ethereum.
-- `"hardhat-gas-reporter": "^1.0.10"` – Gas usage reporting.
-- `"mocha": "^10.0.0"` – Testing framework.
-- `"solidity-coverage": "^0.8.16"` – Solidity code coverage.
-- `"ts-node": "^10.9.2"` – TypeScript execution.
-- `"typechain": "^8.1.1"` – Type generation for contracts.
-- `"typescript": "^5.0.4"` – TypeScript compiler.
-
-Common issues if mismatched:
-- `Error: hardhat-ethers requires ethers v5.x`
-- `TS2345: Argument of type '(number | undefined)[]' is not assignable to parameter of type 'number[]'`
-- `ERESOLVE unable to resolve dependency tree`
-
-### Recommended Terminals
-- **Windows**: WSL2 (Ubuntu) or PowerShell—reliable for builds and CLI.
-- **Linux/macOS**: Native terminals work flawlessly.
-
-## Installation
-
-1. **Install Dependencies**:
-   - Run: `npm install --legacy-peer-deps`
-     - The `--legacy-peer-deps` flag is required to handle potential peer dependency conflicts in older Hardhat setups.
-   - This installs both runtime dependencies and dev dependencies.
-
-2. **Build the Project**:
-   - Run: `npm run build`
-     - This compiles TypeScript files to JavaScript in the `dist/` directory.
-     - Add this to your 'scripts' in your code: "build": "tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/isaCli.js" (this eliminates permission issues in the Ubuntu terminal for Windows WSL users)
-
-3. **Clean the Workspace (Optional)**:
-   - Run: `npm run clean`
-     - Clears artifacts, cache, and dist directories.
-
-For environment-specific setup:
-- **Windows (WSL2)**: Install WSL2 via `wsl --install`, then Ubuntu 24.04+. Use nvm to install Node: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/setup.sh | bash` followed by `nvm install 20.19.6`.
-- **Windows (PowerShell)**: Install Node via official installer or nvm-windows.
-- **Linux/macOS**: Use nvm or package managers like brew for Node.
-
-## Project Structure
-
-- **`src/`**: Core TypeScript source code, including analytics (e.g., `envelopeCli.ts`, `isaDiagnostics.js`), commands (e.g., `deploy/` for artifact deployment), and schemas (e.g., for Zod validation).
-- **`data/`**: Sample datasets like `aggregated_metrics3_2.json` for testing metrics (e.g., β, ψ₅, volatility).
-- **`dist/`**: Compiled JavaScript output.
-- **`docs/`**: Documentation, including the Command Line Interface Tutorial for CLI how-to.
-- **`test/`**: Mocha/Chai tests for metrics and deployments.
-- **`tools/`**: Utilities for NatSpec++ linting and macro-state adapters.
-- **`schemas/`**: Zod schemas for metric validation.
-- **`contracts/`**: Solidity contracts with NatSpec++ annotations (e.g., for governance thresholds like timelock/multisig).
-- **`.isa/deployments/`**: Generated artifacts from deployments (e.g., envelopes, profiles, models).
-
-For auditors/digital forensics: Focus on `tools/` for linter specs and `data/` for telemetry provenance.  
-For governance professionals: Review NatSpec++ in contracts for semantic layers and reproducibility checklists.
-
-## Usage
-
-The project includes a CLI built with Commander for tasks like envelope computation, diagnostics, and deployments. For detailed how-to, refer to the **Command Line Interface Tutorial** in `docs/`.
-
-### Example Commands
-- **Clean Workspace**: `npm run clean`
-- **Build**: `npm run build`
-- **Compute Stability Envelope**: `npm run envelope` (e.g., processes JSON data to output wavelet envelopes for ψ₅ and volatility).
-- **Run Diagnostics**: `npm run diagnostics` (e.g., regime classification, beta momentum, spectral profiles).
-- **Deploy Artifacts** (e.g., envelopes, profiles, models):
-  - `isa deploy envelope envelope.json`
-  - `isa deploy profile profile.json`
-  - `isa deploy model model.json`
-  - `isa deploy list` (lists deployed artifacts).
-- These generate JSON artifacts in `.isa/deployments/` with metadata like timestamps and versions.
-- **Benchmark**: `isa benchmark run <file> [--profile <name>]` (e.g., run benchmarks on datasets).
-
-**CLI Overview with --help**:
-Run `isa --help` to see available commands:
-
-```
-Usage: isa [options] [command]
-
-ISA Metrics unified CLI
-
-Options:
-  -V, --version   output the version number
-  -h, --help      display help for command
-
-Commands:
-  iso             ISO alignment, compliance scoring, and tier computation
-  benchmark       Run ISA Metrics benchmarking and related utilities
-  tags            Tag generation and NatSpec++ tagging utilities
-  deploy          Deploy ISA artifacts to local or remote environments
-  adversarial     Adversarial engine: divergence, attack vectors, and simulations
-  security        Security framework compatibility (CIS, MITRE, ISO, NIST, etc.)
-  gcs             Golden Calibration Series tools
-  inspect <file>  Inspect an ISA envelope file
-  help [command]  display help for command
+npm run build
 ```
 
-For subcommand details, e.g., `isa benchmark --help` or `isa deploy --help`.
+### **Build Script**
+Add this to `package.json` for WSL compatibility:
 
 ```
-Usage: isa benchmark [options] [command]
-
-Run ISA Metrics benchmarking and related utilities
-
-Options:
-  -h, --help                 display help for command
-
-Commands:
-  run [options] <dataset>    Run a benchmark on a dataset
+"build": "tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/isaCli.js"
 ```
-
-For cybersecurity/threat intelligence: Use diagnostics to classify regimes (e.g., 'oversaturated') and spectral profiles for anomaly detection (e.g., ψ₅ low/mid/high band energy).  
-For engineers/developers: Extend CLI in `src/commands/` for custom metrics (e.g., integrate with Hardhat tasks for gas-based ι computation).
-
-📟 CLI Workflow Overview
-
-flowchart TD
-
-    A[User Commands] --> B[npm run envelope]
-    A --> C[npm run diagnostics]
-    A --> D[isa benchmark run &lt;dataset&gt;]
-    D --> D2[Optional: --out file]
-    B --> R[results/]
-    C --> R
-    D2 --> R
-    R --> R1[signals.json]
-    R --> R2[summary.json]
-    R --> R3[plots/]
-    subgraph Deployments
-        E1[envelopes/]
-        E2[profiles/]
-        E3[models/]
-    end
-    A --> E[isa deploy ...]
-    E --> Deployments
-
-
-## Contributing
-
-Thank you for contributing to ISA Fabric. We value clarity, structure, and stability.
-
-- **Contributors/Developers/Engineers**: Fork the repo, create branches for features (e.g., RASUV extensions). Use Hardhat for testing Solidity integrations. Add NatSpec++ annotations for reproducibility (e.g., `@natspec++ v0.2 beta:commit-ratio=0.87`).
-- **Auditors/Cybersecurity Professionals**: Validate against CIS Controls v0.8 mappings—run benchmarks to compute compliance indices (e.g., 0.909 for IG3 maturity). Use RASUV for decomposed security (e.g., R for reentrancy, A for access).
-- **Threat Intelligence/Digital Forensics**: Analyze telemetry in `data/` for regime fractions and drift percentiles. Extend diagnostics for ψ-family propagation (e.g., volatility transfer).
-- **Governance Professionals**: Focus on macro-state coefficients (e.g., governanceRisk) and modulation formulas. NatSpec++ ensures audit trails and ethical notes (e.g., no PII).
-
-### How to Contribute
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/my-feature`.
-3. Follow coding style: TypeScript, modular, clear naming, schema-first.
-4. Validate changes: `npm run build`.
-5. Submit a pull request: Explain changes, rationale, and improvements.
-
-### Contribution Areas
-- Domain packs (e.g., expand cybersecurity or add forensics).
-- Schemas and CLI commands.
-- Documentation and examples (e.g., threat intelligence benchmarks).
-- Testing and simulations.
-
-### Code of Conduct
-Be respectful, constructive, and collaborative. See full guidelines in the constitution for merit-based progression.
-
-Submit PRs with clear descriptions, referencing issues. Follow the contributor workflow (e.g., define macro-state JSON, apply modulation).
-
-## Future Plans
-
-- Integration of Rust for high-performance Webhooks/APIs (e.g., real-time metric execution).
-- Python for advanced visualization (e.g., dashboards, Fourier components, Bollinger bands).
-- Formalized Web Application for Governance (enabling full use of governance features like timelocks and multisig thresholds).
-
-## Current Status
-
-The project is actively in refinement, debugging, and stress testing phases. Expect iterative updates—test thoroughly in your environment. Governance features (e.g., threshold guards, meta-governance) are implemented but will be fully usable once the Web Application is formalized at a later date.
-
-For issues, check logs (e.g., npm debug logs) or open GitHub issues. Contributions are welcome to accelerate stability.
-
-## 🛠️ Troubleshooting
-
-### TypeScript Build Errors (e.g., TS2304)
-**Fix**: Upgrade to Node.js 20.19.6+. Use nvm for management.
-
-### npm Peer Conflicts
-```
-ERESOLVE unable to resolve dependency tree
-```
-**Fix**: Always use `npm install --legacy-peer-deps`.
-
-### Terminal-Specific Errors
-```
-TS2304: Cannot find name 'file'. Did you mean 'File'?
-```
-**Fix**: Switch to PowerShell or WSL2.
-
-For persistent issues, check logs and rebuild. Report bugs via GitHub Issues with full error traces.
-
-## **ATTENTION**
-
-If ever Hardhat returns something like this: 
-
-"kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ npm run clean
-
-> natspecpp-fabric@1.0.0 clean
-> rm -rf artifacts cache dist && echo 'Workspace cleaned.'
-
-Workspace cleaned.
-kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ npm run build
-
-> natspecpp-fabric@1.0.0 build
-> tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/isaCli.js
-
-kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ npm test
-
-> natspecpp-fabric@1.0.0 test
-> npx hardhat test
-
-Segmentation fault (core dumped)
-
-kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$ node-v
-
-node-v: command not found
-
-kidcrypto@DESKTOP-QDKGKFK:~/natspecpp-fabric$" 
-
-Follow these steps, your system will NOT only RECOVER -it WILL LEVEL-UP. 
-
-### **Segmentation Fault (core dumped) when running `npm test` or Hardhat**
-This occurs when Node.js is **not installed inside WSL**, or when Node was installed via `apt` instead of `nvm`.
-
-**Symptoms:**
-- `Segmentation fault (core dumped)`
-- Hardhat crashes without showing a Solidity error
-- `node -v` returns “command not found”
-
-**Fix:**
-Install Node using NVM inside WSL:
-
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.bashrc
-nvm install 18
-nvm use 18
-```
-
-Then reinstall dependencies:
-
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-This resolves all Hardhat segmentation faults.
 
 ---
 
-### **OpenZeppelin imports not found**
-If you see:
-
-```
-HH404: File @openzeppelin/contracts/... not found
-```
-
-Install the correct version:
-
-```bash
-npm install @openzeppelin/contracts@4.9.3 --legacy-peer-deps
-```
-
-This version includes:
-
-- `security/ReentrancyGuard.sol`
-- `access/AccessControl.sol`
-- `governance/TimelockController.sol`
-- `token/ERC20/utils/SafeERC20.sol`
-
----
-
-### **TypeScript builds but Hardhat fails**
-This usually means the TypeScript engine is fine, but Solidity dependencies are missing.
+# 📟 **Command Line Interface (CLI)**  
+*A unified interface for metrics, governance, datasets, adversarial analysis, and more.*
 
 Run:
 
-```bash
-npm install
-npm test
 ```
-## **IMPORTANT**
-
-# ⭐ Why NatSpec++ Needs a Documentation Section  
-Hardhat’s NatSpec parser is strict.  
-It only accepts:
-
-- official NatSpec tags  
-- custom tags that follow a very narrow naming rule  
-
-NatSpec++ introduces:
-
-- semantic layers  
-- benchmarking metadata  
-- governance annotations  
-- composite metrics  
-- ISA‑specific metadata  
-
-These are **not** part of Solidity’s official NatSpec spec, so Hardhat rejects them unless they’re wrapped correctly.
-
-## ⚠️ NatSpec++ Compatibility with Hardhat
-
-ISA Fabric and NatSpec++ extend Solidity’s documentation system with additional semantic tags such as:
-
-@natspec++
-@benchmark
-@governance
-@semantic-layer
-
-These tags are **not recognized by Hardhat**, and will cause compilation to fail with errors like:
-
-DocstringParsingError: Documentation tag @natspec++ not valid for contracts.
-DocstringParsingError: Invalid character in custom tag.
-
-### ✔ How to make NatSpec++ compatible with Hardhat
-
-Hardhat only accepts custom tags that follow this pattern:
-
-@custom:<lowercase-letters-and-hyphens-only>
-
-So NatSpec++ tags must be rewritten as:
-
-| Original Tag | Hardhat-Compatible Form |
-|--------------|--------------------------|
-| `@natspec++` | `@custom:natspecpp` |
-| `@benchmark` | `@custom:benchmark` |
-| `@governance` | `@custom:governance` |
-| `@semantic-layer=benchmarking` | `@custom:semantic-layer benchmarking` |
-
-### ❗ Important Rules
-
-- Custom tag names **cannot contain** `+`, `_`, uppercase letters, or numbers.  
-- The **text after the tag** can contain anything — only the tag name is restricted.  
-- This transformation is required for **any Hardhat-based workflow**, including:  
-  - `hardhat compile`  
-  - `hardhat test`  
-  - `hardhat verify`  
-  - Hardhat plugins that parse NatSpec  
-
-### ✔ Example
-
-#### ❌ Invalid (Hardhat will reject)
-/// @natspec++ v0.2 psi5:security-ratio=0.89
-/// @benchmark suite=parallel-dex
-/// @governance threshold=psi5:lt:0.3,se:gte:0.8
-
-
-#### ✔ Valid (Hardhat will accept)
-/// @custom:natspecpp v0.2 psi5:security-ratio=0.89
-/// @custom:benchmark suite=parallel-dex
-/// @custom:governance threshold=psi5:lt:0.3,se:gte:0.8
-
-
-# ⭐ Why this matters for ISA Fabric  
-NatSpec++ is a core part of ISA Fabric’s philosophy:
-
-- contracts describe their governance  
-- metrics are self‑documenting  
-- thresholds are embedded in code  
-- benchmarking metadata is extractable  
-- semantic layers are explicit  
-
-But Hardhat is not aware of these extensions.
-
-Documenting this ensures:
-
-- contributors don’t panic when Hardhat rejects tags  
-- NatSpec++ remains portable  
-- ISA Fabric stays developer‑friendly  
-- the ecosystem grows cleanly  
-
-
-## 📄 License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## 📘 Glossary
-
-This glossary provides a usable reference for core project concepts, tailored for contributors, developers, auditors, and engineers. It combines metrics-focused terms (e.g., pillars, RASUV) with governance and structural terms for comprehensive coverage.
-
-### 1. Core Metrics Glossary
-
-📐 Metric Flow: From Pillars to Regimes
-flowchart TD
-
-    A[Pillars<br/>β, ι, φ, VU, ψ₅] --> B[Indicators<br/>RSI, σ, MACD, FFT]
-    B --> C[ψ‑Family Propagation]
-    C --> D[Regime Score R]
-    D --> E[Regime Label<br/>baseline / transitional / stressed]
-    E --> F[Composite Metrics<br/>ESI, SE, CRI, CBI]
-
-
-#### Mapping: Five Pillars ↔ RASUV (ψ₅-Family)
-The ISA Metrics pipeline is built on two complementary structures:
-
-##### Five Pillars (Core System Signals)
-These represent the *structural* dimensions of system behavior:
-
-| Pillar | Meaning |
-|--------|---------|
-| **β (Beta)** | Baseline performance / efficiency anchor |
-| **ι (Iota)** | Confirmation momentum / directional integrity |
-| **φ (Phi)** | Flow stability / oscillation behavior |
-| **VU** | Volume–Usage pressure (load vs capacity) |
-| **SE** | System Efficiency (derived composite of pillars) |
-
-##### RASUV (ψ₅-Family of Coefficients)
-These represent the *stress, anomaly, and instability* dimensions:
-
-| Coefficient | Meaning |
-|-------------|---------|
-| **R** | Regime score (derived from ψ₅, σ, divergence) |
-| **A (ψ₅)** | Adversarial pressure / anomaly intensity |
-| **S (σ)** | Volatility of SE (rolling σ) |
-| **U (div)** | Divergence / drift from expected behavior |
-| **V** | Volatility-normalized gating factor (used for MACD suppression) |
-
-##### How They Pair for Scoring
-The Five Pillars describe **what the system is doing**.  
-RASUV describes **how stressed or unstable it is while doing it**.
-
-Together they form the scoring pattern:
-- **Pillars → Indicators → Sub-scores (VI, MI, CRI, CBI)**  
-- **RASUV → Regime Score R → Dynamic weighting + gating**
-
-This pairing ensures:
-- Pillars measure *performance*  
-- RASUV measures *risk*  
-- ESI blends both into a stable, interpretable index
-
- 🔀 RASUV Duality (Security vs Signal Dynamics)
-     flowchart LR
-  
-    A[RASUV (Security)<br/>Reentrancy, Access, State, Upgrade, Verification] --> B[ψ₅ Security Posture]
-
-    C[RASUV (Signal Dynamics)<br/>Rate, Amplitude, Spread, Uniformity, Variance] --> D[Divergence / Envelope / Volatility]
-
-
-#### 2. Indicators
-These are the first derived metrics computed from the raw pillars:
-- **RSI(SE)** — Relative System Efficiency  
-- **Momentum** — ι × (N_confirmed / N_submitted)  
-- **Rolling σ** — volatility of SE  
-- **Bollinger Bands** — volatility-normalized envelope  
-- **MACD** — trend confirmation (volatility-gated)  
-- **FFT Spectrum** — periodicity and seasonality detection  
-- **Correlation Matrix** — inter-metric relationships  
-- **Divergence** — drift from expected ψ₅ behavior  
-
-#### 3. Regime Score (R)
-A continuous stress score derived from:
-- normalized ψ₅  
-- normalized σ(SE)  
-- normalized divergence  
-
-Used to classify each time step into:
-- **Baseline**  
-- **Transitional**  
-- **Stressed**
-
-This classification drives dynamic ESI weighting.
-
-#### 4. Regime Label
-A discrete label assigned from R:
-- `"baseline"`  
-- `"transitional"`  
-- `"stressed"`
-
-Used by the composite scoring layer.
-
-#### 5. Sub-Scores (Internal ESI Components)
-These four internal components form the ESI composite:
-
-##### VI — Volatility Index
-Measures stability of SE.  
-High VI = low volatility = stable.
-
-##### MI — Momentum Index
-Measures directional improvement or degradation.  
-Includes volatility-gated MACD.
-
-##### CRI — Composite Risk Index
-Captures ψ₅ spikes, divergence, φ wobble, and instability.
-
-##### CBI — Capacity Balance Index
-Measures load vs capability using VU, β, and φ.
-
-#### 6. ESI (Efficiency Stability Index)
-A 0–100 composite score:
-
-```
-ESI = wVI * VI + wMI * MI + wCRI * CRI + wCBI * CBI
+isa --help
 ```
 
-Weights are **regime-aware** and adapt based on R.
+---
 
-#### 7. MACD Gating
-MACD influence is reduced or eliminated under high volatility:
+## **Top‑Level Commands**
+
+### **datasets**  
+Generate and inspect ISA Fabric synthetic datasets.  
+- `isa datasets generate <schema>`  
+- `isa datasets inspect <file>`
+
+### **iso**  
+ISO alignment, compliance scoring, and maturity tier computation.  
+- `isa iso score <file>`  
+- `isa iso tier <file>`
+
+### **benchmark**  
+Run ISA Metrics benchmarking workflows.  
+- `isa benchmark run <dataset>`  
+- `isa benchmark summarize <results>`
+
+### **tags**  
+NatSpec++ tag extraction and generation.  
+- `isa tags extract <contract>`  
+- `isa tags generate <file>`
+
+### **adversarial**  
+Divergence analysis, attack‑vector simulation, and stress testing.  
+- `isa adversarial simulate <scenario>`  
+- `isa adversarial diff <A> <B>`
+
+### **security**  
+Security framework compatibility (CIS, MITRE, ISO, NIST).  
+- `isa security map <dataset>`  
+- `isa security score <dataset>`
+
+### **gcs**  
+Golden Calibration Series tools.  
+- `isa gcs build`  
+- `isa gcs inspect <file>`
+
+### **inspect <file>**  
+Inspect envelopes, profiles, models, or artifacts.
+
+### **governance**  
+Governance proposal analysis and pre‑on‑chain evaluation.  
+- `isa governance run <proposal>`  
+- `isa governance simulate <proposal>`  
+- `isa governance explain <proposal>`  
+- `isa governance diff <A> <B>`
+
+### **metrics**  
+Compute pillars, ψ‑family signals, envelopes, and regimes.  
+- `isa metrics compute <dataset>`  
+- `isa metrics envelope <dataset>`  
+- `isa metrics regimes <dataset>`
+
+### **deploy**  
+Deploy artifacts to the local registry.  
+- `isa deploy envelope <file>`  
+- `isa deploy profile <file>`  
+- `isa deploy model <file>`  
+- `isa deploy list`
+
+### **evaluate**  
+Unified evaluation pipeline.  
+- `isa evaluate run <proposal|dataset>`  
+- `isa evaluate summary <results>`
+
+### **forecast**  
+Stability and drift forecasting.  
+- `isa forecast run <dataset>`  
+- `isa forecast compare <A> <B>`
+
+---
+
+# 🛠️ **Troubleshooting**
+
+### **Hardhat Segmentation Fault**  
+Occurs when Node is not installed inside WSL.  
+Fix:
 
 ```
-wMACD_eff = wMACD * max(0, 1 - V)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 20.19.6
 ```
 
-Prevents false signals during stressed regimes.
+### **NatSpec++ Tag Errors**  
+Hardhat requires custom tags to use:
 
-#### 8. Drift Percentiles
-Cross-run governance metrics:
-- **p_mean** — percentile of ESI_mean  
-- **p_last** — percentile of ESI_last  
-- **p_min** — percentile of ESI_min  
+```
+@custom:<lowercase-hyphens>
+```
 
-Used to detect:
-- degraded runs  
-- structural regressions  
-- long-term drift
+Examples:
 
-#### 9. Regime Fractions
-Fraction of time spent in each regime during a run:
-- baseline_fraction  
-- transitional_fraction  
-- stressed_fraction  
+```
+@custom:natspecpp
+@custom:benchmark
+@custom:governance
+```
 
-Useful for dashboards and governance.
+---
 
-#### 10. Run-Level Summary Fields
-Each run produces:
-- ESI_mean  
-- ESI_last  
-- ESI_min  
-- RSI_last  
-- regime_fractions  
-- drift_percentiles  
-- governance_flags  
+# 🤝 **Contributing**
 
-### Governance and Structural Glossary (Searchable Index)
-*A structured, alphabetized index covering major concepts, roles, systems, and protocols for governance and framework structure.*
+We welcome contributions in:
 
-#### A
-**Activation** — Metric or domain becoming officially part of ISA Metrics after governance approval.  
-**Acyclic Dependencies** — Required structure ensuring no circular relationships.  
-**Approvers** — Governance role validating risk and compliance.  
-**Archival Seal** — Finalization step ensuring long-term preservation.  
-**Architecture (Core)** — Foundational structure of domains, metrics, semantics, etc.  
+- metrics  
+- governance analysis  
+- domain packs  
+- schemas  
+- CLI extensions  
+- documentation  
 
-#### B
-**Boundaries (Domain)** — Limits defining what a domain includes and excludes.  
-**Boundary Drift** — Misalignment or expansion of domain scope over time.  
+Please see `docs/CONTRIBUTING.md` for full guidelines.
 
-#### C
-**Certification Framework** — System for institutional certification.  
-**Compliance Framework** — Ensures institutions follow ISA standards.  
-**Contributor** — Role responsible for proposing metrics and domains.  
-**Coordination Protocol** — Global synchronization of institutions.  
-**Cross-Standard Harmonization** — Alignment with ISO, UN, OECD, etc.  
-**Cycles (Dependency)** — Prohibited loops in metric relationships.  
+---
 
-#### D
-**Dependencies** — Relationships between metrics.  
-**Divergence (Δ)** — Symbolic operator measuring semantic drift.  
-**Domain Families** — Grouped sets of related domains.  
-**Drift Detection** — Identifying semantic, structural, or symbolic drift.  
+# 📄 **License**
 
-#### E
-**Escalation Pathways** — Governance routes for resolving issues.  
-**Expansion Protocol** — Adding new domains, metrics, symbolic structures.  
-
-#### F
-**Fairness Architecture** — Demographic and regional fairness structures.  
-**Freeze Windows** — Stabilization periods during updates.  
-**Future-Domain Semantics (θ)** — Symbolic operator for emerging domains.  
-
-#### G
-**Governance Architecture** — Roles, processes, and oversight.  
-**Global Integration** — Worldwide deployment of ISA Metrics.  
-**Granularity (Temporal)** — Time resolution of metrics.  
-
-#### H
-**Harmonization** — Aligning structures across standards or domains.  
-
-#### I
-**Integration Lifecycle** — Stages of global ISA Metrics deployment.  
-**Interplanetary Domains** — Future-domain modeling for off-world systems.  
-
-#### L
-**Lineage** — Historical record of changes.  
-**Lineage Seal** — Finalization of version history.  
-
-#### M
-**Macro-States** — System-level stability envelopes.  
-**Meta-Governance** — Oversight of symbolic and future-domain structures.  
-**Metrics** — Fundamental units of measurement.  
-**Monitoring System** — Dashboards and indicators for global operation.  
-**Maturity Model** — Institutional development stages.  
-
-#### P
-**Propagation Architecture** — How updates and changes move through the system.  
-**Proposal (Metric/Domain)** — Contributor submission for review.  
-
-#### R
-**Readiness Index** — Institutional preparedness measure.  
-**Reviewers** — Governance role ensuring fairness and stability.  
-**Risk Framework** — Systemic risk assessment and mitigation.  
-
-#### S
-**Semantic Architecture** — Meaning structures for metrics.  
-**Simulation Architecture** — Modeling and forecasting systems.  
-**Stabilization Protocol** — Maintaining stability during updates.  
-**Stewards** — Governance role ensuring structural and semantic integrity.  
-**Symbolic Semantics** — θ, κ, σ, τ, Δ, Ξ operators.  
-**Synthetic Ecosystems** — Extra-contextual or virtual domains.  
-
-#### T
-**Temporal Architecture** — Time structures for metrics.  
-**Temporal Semantics (τ)** — Symbolic operator for cross-temporal meaning.  
-
-#### U
-**Uncertainty Architecture** — ψ-bands, temporal uncertainty, propagation uncertainty.  
-**Update Protocol** — Global update propagation rules.  
-
-#### V
-**Versioning** — Tracking changes across editions.  
-**Volatility** — Macro-state measure of instability.  
-
-### Glossary Companion (Friendly Definitions)
-*A clear, approachable glossary for all major ISA Metrics concepts.*
-
-#### A–C
-**Activation** — The moment a metric or domain becomes officially part of ISA Metrics.  
-**Approver** — A governance role that validates risk and compliance.  
-**Boundary** — The conceptual perimeter of a domain.  
-**Contributor** — Anyone who proposes metrics, domains, or improvements.  
-**Cross-Standard Harmonization** — Ensuring ISA Metrics aligns with global standards.
-
-#### D–F
-**Dependency** — A directional relationship where one metric relies on another.  
-**Divergence (Δ)** — A symbolic operator measuring semantic drift.  
-**Domain** — A structured area of measurement (e.g., Energy, Public Safety).  
-**Fairness Overlay** — A structure ensuring demographic and regional equity.  
-**Freeze Window** — A temporary pause on updates to maintain stability.
-
-#### G–L
-**Governance** — The system of roles and processes that maintain ISA integrity.  
-**Harmonization** — Aligning definitions, semantics, and structures.  
-**Lineage** — The historical record of changes to metrics, domains, or semantics.  
-**Lineage Seal** — The finalization of a version’s history.
-
-#### M–P
-**Macro-State** — A system-level stability structure.  
-**Meta-Governance** — Oversight of symbolic semantics and future-domain evolution.  
-**Metric** — A single, well-defined unit of measurement.  
-**Propagation** — How updates move through the system.  
-**Proposal** — A contributor’s submission for review.
-
-#### R–S
-**Readiness** — How prepared an institution is to adopt ISA Metrics.  
-**Reviewer** — A governance role ensuring fairness and stability.  
-**Semantic Type** — The meaning category of a metric (rate, index, state, etc.).  
-**Simulation** — Modeling system behavior using ISA structures.  
-**Steward** — A governance role ensuring structural and semantic alignment.  
-**Symbolic Semantics** — Operators for future-domain, quantum, temporal, and synthetic meaning.
-
-#### T–Z
-**Temporal Granularity** — The time resolution of a metric.  
-**Temporal Semantics (τ)** — Symbolic operator for cross-temporal meaning.  
-**Uncertainty Band (ψ)** — The range of possible values for a metric.  
-**Update Wave** — A controlled propagation of changes.  
-**Volatility** — A measure of instability in macro-states.
-
-## Citation
-
-This project is archived on Zenodo:
-
-kidcrypto. (2026). *bmx4life77/isa-fabric: ISA Fabric v0.3.3 — Governance Refinement & Calibration Integration (v0.3.3).* Zenodo. https://doi.org/10.5281/zenodo.18168443
-
-For BibTeX, CSL, and other formats, see the Zenodo record.
-
+Apache 2.0 — see `LICENSE`.
