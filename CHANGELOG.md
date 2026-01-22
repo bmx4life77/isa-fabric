@@ -151,3 +151,94 @@ All notable changes to this project will be documented in this file.
 - Forecasts validated for `beta`, `psi5`, `ESI`, and `divergence`
 - CLI, dataset engine, loader, extractor, and Theta pipeline now integrated end‑to‑end
 
+
+
+
+CHANGELOG.md
+
+[Unreleased] — Last 24 Hours
+
+✨ Documentation Overhaul
+- Fully redesigned the README.md into a professional, contributor‑friendly format.
+- Streamlined the structure to highlight:
+  - ISA Fabric’s purpose and architecture  
+  - Key features and design principles  
+  - Clean project structure  
+  - Installation and environment requirements  
+  - Updated CLI command set  
+  - Troubleshooting guidance  
+- Removed overly long or deeply technical sections from the README and migrated them to docs/ for clarity and maintainability.
+- Added clear separation between:
+  - Core substrate (ISA Fabric)  
+  - Companion sandbox (ISA Metrics GCS)  
+
+📟 CLI Section Modernization
+- Integrated the complete, current CLI command tree into the README.
+- Added short, precise descriptions for every top‑level command.
+- Documented subcommands for:
+  - datasets
+  - iso
+  - benchmark
+  - tags
+  - adversarial
+  - security
+  - gcs
+  - inspect
+  - governance
+  - metrics
+  - deploy
+  - evaluate
+  - forecast
+- Ensured the CLI documentation now matches the actual output of the tool.
+
+📁 Repository Restructure Planning
+- Finalized the recommended new folder structure for ISA Fabric:
+  - src/
+  - schemas/
+  - governance/
+  - sce/
+  - examples/
+  - data/
+  - docs/
+  - test/
+  - contracts/
+- Identified which directories should be committed vs. ignored.
+- Clarified handling of dev dependencies and runtime artifacts.
+- Prepared the repo for a clean, intentional reorganization.
+
+📦 ISA Metrics GCS (Python Sandbox) — Architectural Decision
+- Determined that ISA Metrics GCS should live in a separate repository, not inside ISA Fabric.
+- Established the relationship:
+  - ISA Fabric = substrate  
+  - ISA Metrics GCS = sandbox / companion engine  
+- Outlined the benefits of separation:
+  - cleaner boundaries  
+  - clearer contributor expectations  
+  - independent release cycles  
+  - language‑specific ecosystems remain isolated  
+
+📄 MANIFEST.in Review & Improvements
+- Reviewed the existing MANIFEST and confirmed it includes:
+  - README  
+  - LICENSE  
+  - examples  
+  - docs  
+  - aggregated metrics  
+  - tests  
+- Provided a refined, production‑ready version including:
+  - exclusion of build artifacts  
+  - exclusion of pycache  
+  - inclusion of internal JSON/YAML assets  
+
+📚 Sphinx Documentation Review
+- Validated the conf.py structure for ISA Metrics GCS.
+- Confirmed autodoc configuration is correct.
+- Suggested optional enhancements (Napoleon, static paths, version metadata).
+
+🧠 Architectural Clarification & Ecosystem Guidance
+- Clarified the conceptual boundaries between:
+  - ISA Fabric (core substrate)
+  - ISA Metrics GCS (sandbox engine)
+- Reinforced the safety‑first, advisory‑only nature of GCS.
+- Confirmed that creating a Python module was not only appropriate but strategically valuable.
+- Provided guidance on how to present the ecosystem to contributors and reviewers.
