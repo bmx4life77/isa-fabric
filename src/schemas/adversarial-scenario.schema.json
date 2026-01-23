@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isa.metrics/schemas/mitre-attck.schema.json",
+  "title": "MITRE ATT&CK Tactic Scores",
+  "type": "object",
+  "properties": {
+    "tactics": {
+      "type": "object",
+      "properties": {
+        "reconnaissance":       { "type": "number", "minimum": 0, "maximum": 1 },
+        "resourceDevelopment":  { "type": "number", "minimum": 0, "maximum": 1 },
+        "initialAccess":        { "type": "number", "minimum": 0, "maximum": 1 },
+        "execution":            { "type": "number", "minimum": 0, "maximum": 1 },
+        "persistence":          { "type": "number", "minimum": 0, "maximum": 1 },
+        "privilegeEscalation":  { "type": "number", "minimum": 0, "maximum": 1 },
+        "defenseEvasion":       { "type": "number", "minimum": 0, "maximum": 1 },
+        "credentialAccess":     { "type": "number", "minimum": 0, "maximum": 1 },
+        "discovery":            { "type": "number", "minimum": 0, "maximum": 1 },
+        "lateralMovement":      { "type": "number", "minimum": 0, "maximum": 1 },
+        "collection":           { "type": "number", "minimum": 0, "maximum": 1 },
+        "commandAndControl":    { "type": "number", "minimum": 0, "maximum": 1 },
+        "exfiltration":         { "type": "number", "minimum": 0, "maximum": 1 },
+        "impact":               { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "required": [
+        "reconnaissance",
+        "resourceDevelopment",
+        "initialAccess",
+        "execution",
+        "persistence",
+        "privilegeEscalation",
+        "defenseEvasion",
+        "credentialAccess",
+        "discovery",
+        "lateralMovement",
+        "collection",
+        "commandAndControl",
+        "exfiltration",
+        "impact"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["tactics"],
+  "additionalProperties": false
+}
