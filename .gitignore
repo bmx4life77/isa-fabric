@@ -1,0 +1,64 @@
+# Node / TypeScript
+node_modules/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets (even if you don't use them yet)
+.env
+.env.local
+.env.*.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+ Python (if any benchmarking uses Python)
+__pycache__/
+#.pyc
+
+# Benchmarking artifacts
+pipeline/history/run_history.json
+pipeline/history/*.json
+pipeline/benchmarks/*.csv
+pipeline/benchmarks/*.json
+pipeline/benchmarks/*.png
+
+# Generated reports
+reports/
+*.html
+*.pdf
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Coverage
+coverage/
+*.lcov
+
+# TypeScript build output (if using tsc)
+lib/
+
+# Synthetic datasets
+datasets/generated/*.json
+datasets/generated/*.csv
+datasets/generated/*.jsonl
+datasets/generated/manifest.json
+
+# Keep folder structure
+!datasets/generated/.gitkeep
