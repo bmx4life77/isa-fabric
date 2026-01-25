@@ -1,16 +1,24 @@
-# **Genesis Governance v4.0**  
+# **GENESIS GOVERNANCE v4.0**  
 ### *A Constitutional Framework for Coherent, Safe, and Self‑Correcting Governance*  
 **This document is constitutionally frozen at Genesis Governance v4.0.0.  
 Any modification must proceed under Article V.**
 
 ---
 
-# **Article 0 — Metric Authority Doctrine**  
+# **PREAMBLE**  
+Genesis Governance exists to ensure that governance remains safe, bounded, and aligned with the system’s constitutional truth.  
+It affirms the values of safety, restraint, clarity, and humility in all governance actions.  
+It provides philosophical grounding but **does not grant authority**, modify procedures, or override any operative Article.  
+In all cases of conflict, the operative Articles govern.
+
+---
+
+# **ARTICLE 0 — METRIC AUTHORITY DOCTRINE**  
 ### *(Operative)*
 
 **Purpose:** Define which metrics may influence execution state.
 
-- **ψ₅ (Security Posture, Pillar V)** — authoritative, enforceable  
+- **ψ₅ (Security Posture)** — authoritative, enforceable  
 - **SE (System Efficiency)** — authoritative, enforceable, sole composite metric permitted to influence execution state  
 - **All other metrics** — including Θ, β, ι, φ, VU, RSI, drift, divergence, coherence — are **strictly descriptive**
 
@@ -21,19 +29,81 @@ This doctrine prevents metric creep, dashboard tyranny, post‑hoc justification
 
 ---
 
-# **Article I — Preamble (Principles Only)**  
+# **ARTICLE 0.1 — CONSTITUTIONAL HIERARCHY, CONFLICT RESOLUTION & FIREWALLS**  
 ### *(Operative)*
 
-Genesis Governance v4.0 establishes a constitutional framework for governing complex systems under uncertainty.  
-It is designed not for preference aggregation, but for **maintaining coherence, safety, and integrity over time**.
+**Purpose.**  
+Establish a clear and unambiguous order of precedence for all constitutional provisions, prevent misuse of interpretive or narrative elements, and enforce strict one‑directional authority flow to eliminate feedback loops and governance drift.
 
-It proceeds from the recognition that:
+---
 
-- complex systems fail non‑linearly  
-- authority degrades when unbounded  
-- governance must detect and correct its own instability  
+## **Hierarchy of Authority**  
+Authority is resolved in the following order:
 
-Accordingly, Genesis Governance is founded on the following principles:
+1. **Article 0 — Metric Authority Doctrine**  
+   *Supreme; governs all execution gating and authoritative metrics.*
+
+2. **Articles II & IV — Operative Governance Machinery**  
+   *Proposal lifecycle; emergency, rollback, and recovery protocols.*
+
+3. **Article V — Evolution & Calibration**  
+   *Subordinate to operative articles; descriptive and reversible only.*
+
+4. **Article I — Principles**  
+   *Non‑binding; interpretive guidance only.*
+
+5. **Appendices**  
+   *Non‑normative; advisory only.*
+
+---
+
+## **Constitutional Firewalls**  
+The Constitution is structured as a **five‑layer firewall**.  
+Each layer may communicate **upward** for interpretation but cannot influence, modify, reinterpret, or override any layer **above** it.  
+Authority flows **downward**; interpretation flows **upward**.  
+This prevents feedback loops, narrative escalation, calibration mutation, and governance drift.
+
+- **Layer 1:** Article 0 → *Absolute metric authority (ψ₅/SE only)*  
+- **Layer 2:** Articles II & IV → *Operational implementation*  
+- **Layer 3:** Article V → *Adaptive tuning (descriptive only)*  
+- **Layer 4:** Article I → *Philosophical guidance*  
+- **Layer 5:** Appendices → *Implementation support*
+
+---
+
+## **Conflict Resolution Rules**
+
+- Any provision that conflicts with **Article 0** is constitutionally void.  
+- **Articles II & IV** implement Article 0 but cannot modify ψ₅/SE authority boundaries.  
+- **Article V** may adjust parameters but cannot bypass ψ₅/SE gating or mutate authority definitions.  
+- **Article I** provides philosophical context but cannot override, modify, reinterpret, or constrain any operative Article.  
+- **Appendices** inform implementation but never establish authority.  
+- **The Preamble is descriptive and non‑operative.** It cannot be used to justify actions that conflict with operative Articles.
+
+---
+
+## **Interpretive Safeguard**  
+No combination, sequence, or procedural interpretation of Articles may establish authority pathways that circumvent this hierarchy. Specifically:
+
+- **Emergency protocols (Article IV)** cannot suspend, weaken, or reinterpret Article 0 or ψ₅/SE gating.  
+- **Calibration (Article V)** cannot introduce new authoritative metrics, modify ψ₅/SE definitions, or elevate descriptive parameters into authority.  
+- **Principles (Article I)** cannot justify exceptions to ψ₅/SE gating or any operative requirement.  
+- **Interpretive constructs (Θ, narratives, envelopes, oscillators)** cannot accumulate into authority through procedural layering or interpretive escalation.
+
+This safeguard applies universally, including during emergencies, upgrades, calibrations, and governance cycles.
+
+---
+
+## **Canonical Statement**  
+**No narrative, principle, interpretive construct, or descriptive metric may override the Metric Authority Doctrine or alter the constitutional hierarchy defined herein.**
+
+---
+
+# **ARTICLE I — PRINCIPLES**  
+### *(Descriptive, Non‑Operative)*
+
+The following principles articulate the philosophical grounding of Genesis Governance.  
+They guide interpretation but **do not grant authority**, modify procedures, or override any operative Article.
 
 ### **Principle I — State Precedes Process**  
 Governance authority arises from system state, not from procedure alone.
@@ -56,12 +126,9 @@ Change must preserve core invariants and resist erosion of authority boundaries.
 ### **Principle VII — Clarity Follows Resilience**  
 Legibility increases only as robustness increases.
 
-**This Preamble establishes intent and posture only.  
-It does not grant authority or modify execution conditions.**
-
 ---
 
-# **Article II — Proposal Lifecycle**  
+# **ARTICLE II — PROPOSAL LIFECYCLE**  
 ### *(Operative)*
 
 **Purpose:** Define how governance intent transitions system state.
@@ -128,7 +195,7 @@ A material change is any Impact Profile modification that alters **eligibility, 
 
 ---
 
-# **Article III — Closed‑Loop Governance Architecture**  
+# **ARTICLE III — CLOSED‑LOOP GOVERNANCE ARCHITECTURE**  
 ### *(Descriptive, Non‑Operative)*
 
 **Purpose:** Describe the system‑level control architecture.
@@ -167,7 +234,7 @@ Consistent with:
 
 ---
 
-# **Article IV — Emergency and Intervention Protocols**  
+# **ARTICLE IV — EMERGENCY AND INTERVENTION PROTOCOLS**  
 ### *(Operative)*
 
 Defines:
@@ -181,8 +248,8 @@ Emergency authority is bounded and subordinate to Article 0.
 
 ---
 
-# **Article V — Calibration, Evolution, and Governance Learning**  
-### *(Operative — Updated)*
+# **ARTICLE V — CALIBRATION, EVOLUTION, AND GOVERNANCE LEARNING**  
+### *(Operative)*
 
 **Purpose:** Define how governance adapts without drifting.
 
@@ -256,8 +323,7 @@ Evolution is permitted only when it preserves the constitutional posture establi
 
 ---
 
-# **Appendices (Non‑Normative)**  
-*(See Appendix A — Constitutional Invariants Checklist for audit‑critical invariants referenced throughout this document.)*
+# **APPENDICES (NON‑NORMATIVE)**  
 
 The following appendices provide explanatory, historical, and audit‑supporting materials.  
 They inform interpretation but **never override constitutional articles**.
@@ -269,11 +335,12 @@ They inform interpretation but **never override constitutional articles**.
 
 ---
 
-# **Publication Status**
+# **PUBLICATION STATUS**
 
 **Genesis Governance v4.0**  
 **Status:** Constitutionally Frozen  
 **Version:** 4.0.0  
 **Scope:** Constitutional  
 **Audience:** Contributors, auditors, implementers, and future stewards  
-**Change Control:** Any modification must proceed under Article V  
+**Change Control:** Any modification must proceed under Article V
+
