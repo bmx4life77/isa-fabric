@@ -154,6 +154,7 @@ All notable changes to this project will be documented in this file.
 
 
 
+
 CHANGELOG.md
 
 [Unreleased] — Last 24 Hours
@@ -242,3 +243,73 @@ CHANGELOG.md
 - Reinforced the safety‑first, advisory‑only nature of GCS.
 - Confirmed that creating a Python module was not only appropriate but strategically valuable.
 - Provided guidance on how to present the ecosystem to contributors and reviewers.
+
+## **Unreleased — January 25–26, 2026**
+
+### **✨ Added**
+- **Spec Compliance Engine (SCE) CLI integration**
+  - Introduced the new command group `isa sce`.
+  - Added `isa sce evaluate` for rule‑driven contract evaluation.
+  - Implemented nested command registration for clean CLI hierarchy.
+
+- **SCE Evaluator Engine**
+  - Added `sce/core/evaluator.ts` implementing rule evaluation, severity handling, and execution recommendations.
+  - Added structured evaluation output including:
+    - Rule results  
+    - Severity levels  
+    - Governance actions  
+    - Serial/parallel execution hints  
+    - Summary block  
+
+- **Declarative Rule Pack**
+  - Added `sce/rules/sce-rules.json` containing:
+    - psi5 security threshold rule  
+    - confidence floor rule  
+    - governance threshold enforcement  
+    - semantic-layer validation rule  
+
+- **Canonical Artifact Schema**
+  - Added `src/artifacts/schema.ts` defining the unified artifact structure consumed by the SCE.
+  - Added `src/artifacts/loadArtifact.ts` to merge NatSpec++, compiler metadata, and source information.
+
+- **CLI Improvements**
+  - Ensured `isaCli.ts` uses a proper shebang and invokes `buildCLI()` cleanly.
+  - Added global CLI installation support via `npm link`.
+  - Cleaned up command registration and removed phantom/unimplemented command hooks.
+
+### **🛠️ Changed**
+- Refactored CLI root (`src/cli/index.ts`) to:
+  - Export `buildCLI()` properly.
+  - Register all command groups consistently.
+  - Integrate SCE commands without leaking evaluator logic into the CLI root.
+- Updated folder structure to support:
+  - `src/natspec/` for NatSpec++ ingestion  
+  - `sce/` as a top‑level subsystem  
+  - Clean separation between runtime engines and TypeScript source  
+
+### **🐛 Fixed**
+- Resolved CLI build errors caused by missing exports in `src/cli/index.ts`.
+- Fixed PATH issues preventing the `isa` command from being recognized after build.
+- Corrected command registration to ensure nested commands appear in `isa --help`.
+
+### **📁 Infrastructure & Structure**
+- Created new directories:
+  - `sce/core/`
+  - `sce/rules/`
+  - `sce/spec/`
+  - `sce/types/`
+- Ensured build output includes CLI entrypoint and schema assets.
+- Added proper `bin` mapping in `package.json` for global CLI usage.
+
+### **🚀 Operational Milestone**
+- Successfully executed the first full SCE evaluation:
+  ```
+  isa sce evaluate --file contracts/KctiDAOImpactProfiles.sol
+  ```
+  Producing:
+  - 2 passes  
+  - 2 fails  
+  - Governance gate enforcement  
+  - Serial execution recommendation  
+
+This marks the first fully operational end‑to‑end run of the SCE pipeline.
