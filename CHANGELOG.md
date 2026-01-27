@@ -152,164 +152,145 @@ All notable changes to this project will be documented in this file.
 - CLI, dataset engine, loader, extractor, and Theta pipeline now integrated end‑to‑end
 
 
+## **Unreleased — January 21–26, 2026**
 
+---
 
+## **✨ Added**
 
-CHANGELOG.md
+### **Spec Compliance Engine (SCE) Subsystem**
+- Introduced a fully operational SCE subsystem under the top‑level `sce/` directory.
+- Added core evaluator engine (`sce/core/evaluator.ts`) implementing:
+  - Rule parsing and execution  
+  - Severity classification  
+  - Governance‑aware actions  
+  - Serial/parallel execution recommendations  
+  - Summary aggregation  
+- Added declarative rule pack (`sce/rules/sce-rules.json`) including:
+  - psi5 security threshold  
+  - confidence floor  
+  - governance threshold enforcement  
+  - semantic‑layer validation  
+- Added SCE context file (`sce/context.json`) for future governance and environment metadata.
 
-[Unreleased] — Last 24 Hours
+### **CLI Integration**
+- Added new command group:  
+  ```
+  isa sce
+  ```
+- Added new evaluation command:  
+  ```
+  isa sce evaluate --file <contract.sol>
+  ```
+- Implemented nested command registration for clean hierarchy.
+- Added global CLI installation support via `npm link`.
 
-✨ Documentation Overhaul
-- Fully redesigned the README.md into a professional, contributor‑friendly format.
-- Streamlined the structure to highlight:
-  - ISA Fabric’s purpose and architecture  
-  - Key features and design principles  
-  - Clean project structure  
-  - Installation and environment requirements  
-  - Updated CLI command set  
-  - Troubleshooting guidance  
-- Removed overly long or deeply technical sections from the README and migrated them to docs/ for clarity and maintainability.
-- Added clear separation between:
-  - Core substrate (ISA Fabric)  
-  - Companion sandbox (ISA Metrics GCS)  
+### **Canonical Artifact Pipeline**
+- Added canonical artifact schema (`src/artifacts/schema.ts`) defining:
+  - ABI  
+  - bytecode  
+  - compiler metadata  
+  - NatSpec++ semantic layers  
+  - governance metadata  
+  - metrics  
+- Added artifact loader (`src/artifacts/loadArtifact.ts`) merging:
+  - Solidity source  
+  - NatSpec++ parsed output  
+  - compiler metadata (placeholder for now)
 
-📟 CLI Section Modernization
-- Integrated the complete, current CLI command tree into the README.
-- Added short, precise descriptions for every top‑level command.
-- Documented subcommands for:
-  - datasets
-  - iso
-  - benchmark
-  - tags
-  - adversarial
-  - security
-  - gcs
-  - inspect
-  - governance
-  - metrics
-  - deploy
-  - evaluate
-  - forecast
-- Ensured the CLI documentation now matches the actual output of the tool.
+### **NatSpec++ Integration**
+- Integrated NatSpec++ parser output into canonical artifacts.
+- Added semantic layer extraction, governance metadata, and metric mapping.
+- Enabled SCE to consume NatSpec++ metrics, layers, and confidence scores.
 
-📁 Repository Restructure Planning
-- Finalized the recommended new folder structure for ISA Fabric:
-  - src/
-  - schemas/
-  - governance/
-  - sce/
-  - examples/
-  - data/
-  - docs/
-  - test/
-  - contracts/
-- Identified which directories should be committed vs. ignored.
-- Clarified handling of dev dependencies and runtime artifacts.
-- Prepared the repo for a clean, intentional reorganization.
+### **Dataset Generator Enhancements**
+- Added dataset generator imports and wiring to CLI root.
+- Added support for:
+  - Baseline  
+  - DDoS  
+  - Insider threat  
+  - Supply chain  
+  - Regulatory change  
+  - Full multi‑scenario generation  
+- Added dataset statistics mode (`--stats`).
+- Added scenario listing (`--list`).
 
-📦 ISA Metrics GCS (Python Sandbox) — Architectural Decision
-- Determined that ISA Metrics GCS should live in a separate repository, not inside ISA Fabric.
-- Established the relationship:
-  - ISA Fabric = substrate  
-  - ISA Metrics GCS = sandbox / companion engine  
-- Outlined the benefits of separation:
-  - cleaner boundaries  
-  - clearer contributor expectations  
-  - independent release cycles  
-  - language‑specific ecosystems remain isolated  
+### **Genesis Governance v4.0 Updates**
+- Integrated Article 0.1 — Constitutional Hierarchy & Conflict Resolution.
+- Updated Preamble and Article I.
+- Added adversarial protections section (Metric Collusion Defense).
+- Prepared for integration of Emergency Protocols Playbook and Impromptu Mensuration.
+- Began harmonizing governance thresholds with SCE rule enforcement.
 
-📄 MANIFEST.in Review & Improvements
-- Reviewed the existing MANIFEST and confirmed it includes:
-  - README  
-  - LICENSE  
-  - examples  
-  - docs  
-  - aggregated metrics  
-  - tests  
-- Provided a refined, production‑ready version including:
-  - exclusion of build artifacts  
-  - exclusion of pycache  
-  - inclusion of internal JSON/YAML assets  
+---
 
-📚 Sphinx Documentation Review
-- Validated the conf.py structure for ISA Metrics GCS.
-- Confirmed autodoc configuration is correct.
-- Suggested optional enhancements (Napoleon, static paths, version metadata).
+## **🛠️ Changed**
 
-🧠 Architectural Clarification & Ecosystem Guidance
-- Clarified the conceptual boundaries between:
-  - ISA Fabric (core substrate)
-  - ISA Metrics GCS (sandbox engine)
-- Reinforced the safety‑first, advisory‑only nature of GCS.
-- Confirmed that creating a Python module was not only appropriate but strategically valuable.
-- Provided guidance on how to present the ecosystem to contributors and reviewers.
+### **CLI Architecture**
+- Refactored `src/cli/index.ts` to properly export `buildCLI()`.
+- Cleaned up command registration and removed phantom/unimplemented commands.
+- Ensured evaluator logic is isolated to SCE command module, not CLI root.
+- Improved CLI help output and command grouping.
 
-## **Unreleased — January 25–26, 2026**
+### **Folder Structure**
+- Clarified separation between:
+  - `src/` (TypeScript source)  
+  - `sce/` (runtime subsystem)  
+  - `schemas/` (canonical schemas)  
+  - `engine/` (parallel execution engine)  
+- Ensured SCE remains a top‑level subsystem rather than nested under `src/`.
 
-### **✨ Added**
-- **Spec Compliance Engine (SCE) CLI integration**
-  - Introduced the new command group `isa sce`.
-  - Added `isa sce evaluate` for rule‑driven contract evaluation.
-  - Implemented nested command registration for clean CLI hierarchy.
+### **Build Pipeline**
+- Ensured CLI entrypoint (`isaCli.js`) is copied to `dist/` with executable permissions.
+- Updated build script to copy schema assets into `dist/schemas`.
 
-- **SCE Evaluator Engine**
-  - Added `sce/core/evaluator.ts` implementing rule evaluation, severity handling, and execution recommendations.
-  - Added structured evaluation output including:
-    - Rule results  
-    - Severity levels  
-    - Governance actions  
-    - Serial/parallel execution hints  
-    - Summary block  
+---
 
-- **Declarative Rule Pack**
-  - Added `sce/rules/sce-rules.json` containing:
-    - psi5 security threshold rule  
-    - confidence floor rule  
-    - governance threshold enforcement  
-    - semantic-layer validation rule  
+## **🐛 Fixed**
 
-- **Canonical Artifact Schema**
-  - Added `src/artifacts/schema.ts` defining the unified artifact structure consumed by the SCE.
-  - Added `src/artifacts/loadArtifact.ts` to merge NatSpec++, compiler metadata, and source information.
+- Fixed missing export error for `buildCLI` in `src/cli/index.ts`.
+- Fixed PATH issues preventing `isa` from being recognized globally.
+- Fixed incorrect evaluator import in CLI root.
+- Fixed nested command registration so `isa sce` appears correctly in help output.
+- Fixed rule evaluation edge cases where undefined values produced empty messages.
 
-- **CLI Improvements**
-  - Ensured `isaCli.ts` uses a proper shebang and invokes `buildCLI()` cleanly.
-  - Added global CLI installation support via `npm link`.
-  - Cleaned up command registration and removed phantom/unimplemented command hooks.
+---
 
-### **🛠️ Changed**
-- Refactored CLI root (`src/cli/index.ts`) to:
-  - Export `buildCLI()` properly.
-  - Register all command groups consistently.
-  - Integrate SCE commands without leaking evaluator logic into the CLI root.
-- Updated folder structure to support:
-  - `src/natspec/` for NatSpec++ ingestion  
-  - `sce/` as a top‑level subsystem  
-  - Clean separation between runtime engines and TypeScript source  
+## **📁 Infrastructure & Tooling**
 
-### **🐛 Fixed**
-- Resolved CLI build errors caused by missing exports in `src/cli/index.ts`.
-- Fixed PATH issues preventing the `isa` command from being recognized after build.
-- Corrected command registration to ensure nested commands appear in `isa --help`.
-
-### **📁 Infrastructure & Structure**
-- Created new directories:
+- Added new directories:
   - `sce/core/`
   - `sce/rules/`
   - `sce/spec/`
   - `sce/types/`
-- Ensured build output includes CLI entrypoint and schema assets.
-- Added proper `bin` mapping in `package.json` for global CLI usage.
+- Added missing CLI utilities under `dist/src/cli/utils`.
+- Ensured `package.json` includes correct `"bin"` mapping for global CLI usage.
 
-### **🚀 Operational Milestone**
-- Successfully executed the first full SCE evaluation:
-  ```
-  isa sce evaluate --file contracts/KctiDAOImpactProfiles.sol
-  ```
-  Producing:
-  - 2 passes  
-  - 2 fails  
-  - Governance gate enforcement  
-  - Serial execution recommendation  
+---
 
-This marks the first fully operational end‑to‑end run of the SCE pipeline.
+## **🚀 Operational Milestones**
+
+### **First Full SCE Evaluation**
+Successfully executed:
+
+```
+isa sce evaluate --file contracts/KctiDAOImpactProfiles.sol
+```
+
+Produced:
+- 2 rule passes  
+- 2 rule failures  
+- Governance gate enforcement  
+- Serial execution recommendation  
+- Fully structured JSON output  
+
+This marks the first end‑to‑end operational run of the SCE pipeline.
+
+### **Genesis Governance v4.0 Integration**
+- Governance thresholds now influence SCE rule evaluation.
+- Semantic layers and governance metadata flow from NatSpec++ → Artifact Loader → SCE.
+
+
+
+
+
