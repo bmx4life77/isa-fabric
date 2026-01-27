@@ -1,6 +1,12 @@
 # ⭐ **ISA Fabric — README v0.3**  
 *A modular research framework for structured metrics, semantic annotations, and pre‑on‑chain security analysis.*
 
+[![GitHub license](https://img.shields.io/github/license/bmx4life77/isa-fabric)](https://github.com/bmx4life77/isa-fabric/blob/main/LICENSE)
+[![CLI](https://img.shields.io/badge/CLI-ready-green)](https://github.com/bmx4life77/isa-fabric)
+[![Documentation](https://img.shields.io/badge/wiki-available-blue)](https://github.com/bmx4life77/isa-fabric/wiki)
+[![SCE](https://img.shields.io/badge/SCE-governance--aware-purple)](https://github.com/bmx4life77/isa-fabric)
+
+
 DOI [(doi.org in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.18168443")
 
 ISA Fabric is a **domain‑agnostic metrics and analysis framework** designed to measure, benchmark, and evaluate complex systems. It provides structured pipelines for:
