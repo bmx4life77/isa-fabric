@@ -1,3 +1,4 @@
+
 # ⭐ **ISA Fabric — README v0.3**  
 *A modular research framework for structured metrics, semantic annotations, and pre‑on‑chain security analysis.*
 
@@ -6,8 +7,7 @@
 [![Documentation](https://img.shields.io/badge/wiki-available-blue)](https://github.com/bmx4life77/isa-fabric/wiki)
 [![SCE](https://img.shields.io/badge/SCE-governance--aware-purple)](https://github.com/bmx4life77/isa-fabric)
 
-
-DOI [(doi.org in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.18168443")
+DOI: [10.5281/zenodo.18168443](https://doi.org/10.5281/zenodo.18168443)
 
 ISA Fabric is a **domain‑agnostic metrics and analysis framework** designed to measure, benchmark, and evaluate complex systems. It provides structured pipelines for:
 
@@ -35,6 +35,13 @@ ISA Fabric is a **research substrate** — a structured environment for:
 It is **not** a governance system, standard, or authority layer.  
 It is a **toolbox** for structured analysis.
 
+It is designed to be:
+
+- **Extensible** — new rule packs, domain packs, and governance modules
+- **Transparent** — declarative rules, auditable artifacts
+- **Composable** — CLI, SCE, NatSpec++, datasets, governance
+- **Future‑proof** — built for long‑term stewardship and contributor onboarding
+
 ---
 
 # 🚀 **Key Features**
@@ -57,14 +64,14 @@ All envelopes, profiles, models, and datasets are validated with Zod schemas.
 ### **Versioned Deployments**  
 Artifacts are stored in:
 
-```
+
 .isa/deployments/
   envelopes/
   profiles/
   models/
   artifacts/
   active/
-```
+
 
 ### **Modular CLI**  
 A unified CLI for metrics, governance, datasets, adversarial analysis, ISO alignment, and more.
@@ -76,7 +83,7 @@ Prebuilt structures for CIS Controls v8, MITRE ATT&CK, NIST CSF, and more.
 
 # 📁 **Project Structure**
 
-```
+
 isa-fabric/
 ├── src/                # Core TypeScript source
 ├── dist/               # Compiled output
@@ -86,7 +93,7 @@ isa-fabric/
 ├── contracts/          # Solidity contracts with NatSpec++
 ├── test/               # Mocha/Chai tests
 └── .isa/deployments/   # Versioned artifacts
-```
+
 
 Advanced documentation (metrics, governance, NatSpec++, RASUV, etc.) has been moved to `docs/` for clarity.
 
@@ -102,100 +109,281 @@ Advanced documentation (metrics, governance, NatSpec++, RASUV, etc.) has been mo
 - Recommended: WSL2 on Windows  
 
 ### **Install**
-```
+
 npm install --legacy-peer-deps
 npm run build
-```
+
 
 ### **Build Script**
 Add this to `package.json` for WSL compatibility:
 
-```
+
 "build": "tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/isaCli.js"
-```
+
 
 ---
 
-# 📟 **Command Line Interface (CLI)**  
-*A unified interface for metrics, governance, datasets, adversarial analysis, and more.*
+# ⚡ **ISA Fabric CLI Reference**
 
-Run:
+The ISA Fabric CLI provides a unified interface for evaluating artifacts, running governance simulations, generating datasets, benchmarking, forecasting, and performing deployment operations.  
+It is designed to be:
 
-```
+- **Deterministic**  
+- **Contributor‑friendly**  
+- **Extensible**  
+- **Constitutionally aligned**  
+
+Run the CLI:
+
+
 isa --help
-```
+
 
 ---
 
-## **Top‑Level Commands**
+## 🧭 Command Groups Overview
 
-### **datasets**  
-Generate and inspect ISA Fabric synthetic datasets.  
-- `isa datasets generate <schema>`  
-- `isa datasets inspect <file>`
+| Command Group | Purpose |
+|---------------|---------|
+| `sce`         | Spec Compliance Engine |
+| `inspect`     | Artifact and envelope inspection |
+| `datasets`    | Dataset utilities |
+| `metrics`     | Metric extraction and scoring |
+| `governance`  | Governance evaluation |
+| `tags`        | NatSpec++ tag utilities |
+| `benchmark`   | Benchmarking tools |
+| `iso`         | ISO alignment and reporting |
+| `security`    | Security framework mapping |
+| `adversarial` | Adversarial simulations |
+| `gcs`         | Golden Calibration Series |
+| `deploy`      | Deployment utilities |
+| `forecast`    | Forecasting models |
 
-### **iso**  
-ISO alignment, compliance scoring, and maturity tier computation.  
-- `isa iso score <file>`  
-- `isa iso tier <file>`
+Each command group contains subcommands and flags.  
+Use:
 
-### **benchmark**  
-Run ISA Metrics benchmarking workflows.  
-- `isa benchmark run <dataset>`  
-- `isa benchmark summarize <results>`
 
-### **tags**  
-NatSpec++ tag extraction and generation.  
-- `isa tags extract <contract>`  
-- `isa tags generate <file>`
+isa <command> --help
+isa <command> <subcommand> --help
 
-### **adversarial**  
-Divergence analysis, attack‑vector simulation, and stress testing.  
-- `isa adversarial simulate <scenario>`  
-- `isa adversarial diff <A> <B>`
 
-### **security**  
-Security framework compatibility (CIS, MITRE, ISO, NIST).  
-- `isa security map <dataset>`  
-- `isa security score <dataset>`
+to explore details.
 
-### **gcs**  
-Golden Calibration Series tools.  
-- `isa gcs build`  
-- `isa gcs inspect <file>`
+---
 
-### **inspect <file>**  
-Inspect envelopes, profiles, models, or artifacts.
+## 🌐 Global Flags
 
-### **governance**  
-Governance proposal analysis and pre‑on‑chain evaluation.  
-- `isa governance run <proposal>`  
-- `isa governance simulate <proposal>`  
-- `isa governance explain <proposal>`  
-- `isa governance diff <A> <B>`
+These flags are available on all commands:
 
-### **metrics**  
-Compute pillars, ψ‑family signals, envelopes, and regimes.  
-- `isa metrics compute <dataset>`  
-- `isa metrics envelope <dataset>`  
-- `isa metrics regimes <dataset>`
 
-### **deploy**  
-Deploy artifacts to the local registry.  
-- `isa deploy envelope <file>`  
-- `isa deploy profile <file>`  
-- `isa deploy model <file>`  
-- `isa deploy list`
+--file <path>     Input file (Solidity, artifact, dataset)
+--out <path>      Output file or directory
+--json            Output machine-readable JSON
+--verbose         Show detailed logs
+--quiet           Suppress non-essential output
 
-### **evaluate**  
-Unified evaluation pipeline.  
-- `isa evaluate run <proposal|dataset>`  
-- `isa evaluate summary <results>`
 
-### **forecast**  
-Stability and drift forecasting.  
-- `isa forecast run <dataset>`  
-- `isa forecast compare <A> <B>`
+---
+
+## 🧩 **Command Groups and Syntax**
+
+### 🔷 SCE — Spec Compliance Engine
+
+**Subcommands**  
+`isa sce evaluate`
+
+**Flags**  
+`--file <path>`  
+`--ruleset <name>`  
+`--policy <article>`  
+`--scenario <name>`  
+`--json`
+
+**Example**  
+
+isa sce evaluate --file contract.sol --ruleset default --json
+
+
+### 🔷 Inspect
+
+**Flags**  
+`--file <path>`  
+`--json`
+
+**Example**  
+
+isa inspect --file artifact.json --json
+
+
+### 🔷 Datasets
+
+**Modes**  
+`isa datasets --list`  
+`isa datasets --stats`  
+`isa datasets --scenario <name> --out <path>`
+
+**Example**  
+
+isa datasets --scenario baseline --out ./out/
+
+
+### 🔷 Metrics
+
+**Subcommands**  
+`extract` | `score` | `layers`
+
+**Flags**  
+`--file <path>`  
+`--metric <name>`  
+`--threshold <value>`  
+`--layer <name>`  
+`--json`
+
+**Example**  
+
+isa metrics extract --file artifact.json --metric gas
+
+
+### 🔷 Governance
+
+**Subcommands**  
+`evaluate` | `thresholds` | `simulate`
+
+**Flags**  
+`--file <path>`  
+`--policy <article>`  
+`--json`
+
+**Example**  
+
+isa governance evaluate --file artifact.json --policy A1
+
+
+### 🔷 Tags (NatSpec++)
+
+**Subcommands**  
+`parse` | `extract` | `validate`
+
+**Flags**  
+`--file <path>`  
+`--strict`  
+`--layer <name>`  
+`--json`
+
+**Example**  
+
+isa tags parse --file contract.sol --strict
+
+
+### 🔷 Benchmark
+
+**Subcommands**  
+`run` | `compare` | `profile`
+
+**Flags**  
+`--file <path>`  
+`--dataset <path>`  
+`--scenario <name>`  
+`--compare <file>`  
+`--json`
+
+**Example**  
+
+isa benchmark run --file artifact.json --dataset ds.json
+
+
+### 🔷 ISO
+
+**Subcommands**  
+`compute` | `align` | `report`
+
+**Flags**  
+`--file <path>`  
+`--standard <iso>`  
+`--out <path>`  
+`--json`
+
+**Example**  
+
+isa iso compute --file artifact.json --standard ISO-27001
+
+
+### 🔷 Security
+
+**Subcommands**  
+`map` | `score` | `report`
+
+**Flags**  
+`--file <path>`  
+`--framework <CIS|MITRE|NIST|ISO>`  
+`--out <path>`  
+`--json`
+
+**Example**  
+
+isa security map --file artifact.json --framework CIS
+
+
+### 🔷 Adversarial
+
+**Subcommands**  
+`simulate` | `vector` | `stress`
+
+**Flags**  
+`--file <path>`  
+`--scenario <ddos|insider|supply-chain>`  
+`--intensity <0-10>`  
+`--json`
+
+**Example**  
+
+isa adversarial simulate --file artifact.json --scenario ddos --intensity 7
+
+
+### 🔷 GCS — Golden Calibration Series
+
+**Subcommands**  
+`calibrate` | `verify`
+
+**Flags**  
+`--scenario <baseline|high-variance>`  
+`--dataset <path>`  
+`--json`
+
+**Example**  
+
+isa gcs calibrate --scenario baseline
+
+
+### 🔷 Deploy
+
+**Subcommands**  
+`prepare` | `simulate` | `publish`
+
+**Flags**  
+`--file <path>`  
+`--network <mainnet|testnet|local>`  
+`--json`
+
+**Example**  
+
+isa deploy simulate --file artifact.json --network local
+
+
+### 🔷 Forecast
+
+**Subcommands**  
+`theta` | `risk` | `simulate`
+
+**Flags**  
+`--dataset <path>`  
+`--model <theta|risk>`  
+`--json`
+
+**Example**  
+
+isa forecast simulate --dataset ds.json --model theta
+
 
 ---
 
@@ -205,25 +393,25 @@ Stability and drift forecasting.
 Occurs when Node is not installed inside WSL.  
 Fix:
 
-```
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 nvm install 20.19.6
-```
+
 
 ### **NatSpec++ Tag Errors**  
 Hardhat requires custom tags to use:
 
-```
+
 @custom:<lowercase-hyphens>
-```
+
 
 Examples:
 
-```
+
 @custom:natspecpp
 @custom:benchmark
 @custom:governance
-```
+
 
 ---
 
@@ -245,3 +433,4 @@ Please see `docs/CONTRIBUTING.md` for full guidelines.
 # 📄 **License**
 
 Apache 2.0 — see `LICENSE`.
+
