@@ -277,6 +277,8 @@ Successfully executed:
 isa sce evaluate --file contracts/KctiDAOImpactProfiles.sol
 ```
 
+CHANGELOG.md — Cumulative Section for January 2026
+
 Produced:
 - 2 rule passes  
 - 2 rule failures  
@@ -289,6 +291,54 @@ This marks the first end‑to‑end operational run of the SCE pipeline.
 ### **Genesis Governance v4.0 Integration**
 - Governance thresholds now influence SCE rule evaluation.
 - Semantic layers and governance metadata flow from NatSpec++ → Artifact Loader → SCE.
+
+## [v0.5.0-governance-alpha] — January 2026
+
+### Governance Benchmarking Lattice v1.0
+- Completed full 60‑vertex governance lattice across 10 axes.
+- Benchmarked 8 governance systems: Genesis v4.0, Bitcoin, Ethereum, Tezos, Polkadot, Cosmos Hub, MakerDAO, US Federal Reserve.
+- Added axis averages, overall resilience scores, and comparative analysis.
+- Integrated lattice with constitutional logic from Genesis Governance v4.0.
+
+### Stress Testing Framework
+- Implemented 8 stress tests: Narrative Attack, Parameter Creep, Emergency Abuse, Time Decay, Metric Failure, Cross-Metric Collusion, Governance Paralysis, Fork/Fragmentation.
+- Applied stress modifiers to all governance models.
+- Produced stressed resilience scores and Δ‑based degradation profiles.
+- Confirmed Genesis v4.0’s near-zero degradation under stress.
+
+### CLI Revival & Governance Command Group
+- Fixed silent CLI execution by adding proper entrypoint parsing.
+- Rebuilt CLI command tree and added governance command group.
+- Added scaffolding for `evaluate`, `simulate`, and `inspect` commands.
+- Created governance engine directory with evaluator/simulator/inspector stubs.
+
+### Research Lab Initialization
+- Created Research Lab folder structure for governance benchmarking.
+- Prepared for Git integration and dataset versioning.
+- Added placeholders for machine-readable lattice datasets.
+
+### JSON Schema & Evaluator Architecture
+- Drafted JSON schema for Governance Benchmarking Lattice v1.0.
+- Added schema sections for axes, vertices, models, and stress tests.
+- Prepared evaluator architecture for CLI integration.
+
+### Genesis Governance Cornerstone Files (Restored)
+- Reconstructed the four foundational documents:
+  - Foundational Rationale & Problem Statement
+  - Metric Authority Doctrine (ψ₅/SE Exclusivity)
+  - Constitutional Supremacy & Interpretive Firewall
+  - Calibration Non‑Regression & Safety Envelope Protocol
+- Positioned these under `research-lab/governance/cornerstone/`.
+
+### Documentation & Standards Work
+- Integrated two external reviews (Review No.2 and Review No.3).
+- Added Benchmark Evolution Protocol (meta-governance for the benchmark).
+- Updated documentation to reflect lattice, stress tests, and evaluator design.
+
+### Overall
+This month establishes the governance subsystem as a first-class component of the ISA Fabric. The lattice, stress engine, CLI, and cornerstone documents now form a coherent, extensible foundation for future evaluator development and standardization work.
+
+
 
 
 
