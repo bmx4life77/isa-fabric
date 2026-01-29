@@ -14,7 +14,7 @@
   },
 
   "type": "commonjs",
-  "main": "dist/cli/index.js",
+  "main": "dist/src/cli/index.js",
   "bin": {
     "isa": "./dist/cli/index.js"
   },
