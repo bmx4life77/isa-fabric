@@ -1,3 +1,95 @@
+# **CHANGELOG.md**  
+### **Last 72 Hours — ISA Fabric / Genesis Governance CLI**
+
+## **[0.4.0] — 2026‑02‑02 — Major CLI & Governance Engine Bring‑Up**
+
+### **Added**
+- **Full CLI command tree scaffolding completed**  
+  - Added 8 new command modules:  
+    - `blvdbCommand`  
+    - `latticeCommand`  
+    - `benchCommand`  
+    - `complianceCommand`  
+    - `constitutionCommand`  
+    - `calibrateCommand`  
+    - `systemCommand`  
+    - `devCommand`  
+  - All commands now compile and load successfully under `isa.ts`.
+
+- **Evaluator subsystem foundation implemented**  
+  - Added real Commander‑style subcommands:  
+    - `eval lattice` — Article 0 dual‑gate evaluation (ψ₅ + SE)  
+    - `eval failure` — Article 0 failure‑mode taxonomy simulator  
+    - `eval stress` — ψ₅/SE trajectory stress‑testing  
+  - Introduced real logic for:  
+    - Security pressure banding  
+    - Efficiency banding  
+    - Dual‑gate execution decision  
+    - Hysteresis notes  
+    - Failure‑mode semantics
+
+- **Article 0 governance logic formalized in code**  
+  - ψ₅ ≤ 0.72 and SE ≥ 0.84 gating  
+  - Normalization enforcement  
+  - Emergency vs normal state classification  
+  - Interpretive firewall semantics  
+  - Cross‑metric independence checks (stubbed for now)
+
+- **NIST Submission Packet completed**  
+  - Added Appendices A–H  
+  - Added master `/NIST-Submission/README.md`  
+  - Added regulator‑grade structure, metadata, and submission instructions  
+  - Added reproduction instructions (Appendix F)  
+  - Added references (Appendix H)
+
+### **Changed**
+- **Refactored eval subsystem**  
+  - Converted helper functions into Commander.js subcommands  
+  - Updated `evalCommand.ts` to use real Command objects  
+  - Removed invalid imports and replaced with structured modules
+
+- **Improved CLI build stability**  
+  - Cleaned up missing module imports  
+  - Ensured all command directories contain valid exports  
+  - Achieved first fully clean TypeScript build across entire CLI
+
+- **Documentation elevation**  
+  - Added deep Article 0 explainer (ψ₅ + SE)  
+  - Clarified sufficiency doctrine  
+  - Added failure‑mode taxonomy  
+  - Added ASCII dual‑gate diagram  
+  - Added lattice mapping notes
+
+### **Fixed**
+- **Resolved TypeScript “not a module” errors**  
+  - Missing exports in eval helpers  
+  - Missing command modules referenced by `isa.ts`
+
+- **Resolved CLI build failures**  
+  - Added all required command files  
+  - Ensured Commander.js command objects match expected types
+
+### **Removed**
+- Placeholder eval logic replaced with real Article 0 semantics  
+- Removed unused imports and dead scaffolding
+
+---
+
+## **Summary**
+
+The last 72 hours represent the **first full stabilization** of the ISA Fabric CLI and the **completion of the NIST submission packet**. The governance engine now has:
+
+- a real command tree  
+- real evaluator logic  
+- real Article 0 enforcement  
+- real lattice semantics  
+- real failure‑mode simulation  
+- a clean, compiling TypeScript build  
+
+This is the moment the project transitions from “scaffolding” to **operational architecture*.
+
+
+
 ## [v0.3.3] — 2026-01-06
 
 ### Added
@@ -337,6 +429,7 @@ This marks the first end‑to‑end operational run of the SCE pipeline.
 
 ### Overall
 This month establishes the governance subsystem as a first-class component of the ISA Fabric. The lattice, stress engine, CLI, and cornerstone documents now form a coherent, extensible foundation for future evaluator development and standardization work.
+
 
 
 
