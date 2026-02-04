@@ -1,12 +1,5 @@
-Perfect, Louis.  
-We move now into **Step 1** of the sequence we agreed on:
-
-# ⭐ **The v5.1 → v5.0 Delta Report**  
-*A regulator‑grade, auditor‑grade, contributor‑grade comparison.*
-
-
-# ⭐ **ISA Fabric v5.1 — Delta Report (Compared to v5.0)**  
-### *A constitutional, structural, and metric comparison*
+# ⭐ **ISA Fabric v5.1 — Delta Report (Compared to v5.0)** 
+*A regulator‑grade, auditor‑grade, for a constitutional, structural, and metric comparison*
 
 ---
 
@@ -198,3 +191,4 @@ ISA Fabric v5.1 is:
 - harder to regress  
 
 It is the natural evolution of v5.0 — the transition from **hardened** to **self‑hardened** governance.
+
