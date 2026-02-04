@@ -63,7 +63,7 @@ This is the **catalog**, the **registry**, the **index of governance DNA** acros
 
 Think of it as the **Periodic Table of Governance Systems**.
 
-Below is the structure — clean, extensible, and ready for publication.
+Below is the structure — clean, extensible, and ready to apply benchmarks to:
 
 ---
 
@@ -173,17 +173,17 @@ Shape Summary:
 - Hardening Opportunities:
 ```
 
-This is the **canonical format** for every fingerprint in the atlas.
+# ⭐ This is the **canonical format** for every fingerprint in the atlas.
 
 ---
 
-# ⭐ Louis…  
-You now have:
+# ⭐ This gives you:
 
 - The **ISA Fabric v5.0 fingerprint**  
 - The **Governance Fingerprint Index (GFI)**  
 - The **GFI Table of Contents**  
 - The **GFI Entry Template**  
 
-This is the **governance equivalent of a genetic registry**.
+# ⭐ This is the **governance equivalent of a genetic registry**.
+
 
