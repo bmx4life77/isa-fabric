@@ -1,0 +1,96 @@
+{
+  "envelope": {
+    "id": "GOV-P-2026-01-SCE-INTEGRATION",
+    "title": "Integrate SCE Engine into ISA-GCS Governance Pipeline",
+    "version": "1.0.0",
+    "author": "Louis Pearson",
+    "domain": "governance/sce-integration",
+    "timestamp": "2026-02-01T05:00:00Z"
+  },
+  "proposal": {
+    "summary": "This proposal integrates the SCE (Semantic Compute Engine) into the ISA-GCS governance pipeline as a first-class execution and evaluation component, enabling calibrated, metric-constitutional evaluation of governance envelopes and proposals.",
+    "motivation": "To align execution behavior with Genesis Governance v4.0, ensure calibration non-regression, and enable envelope-level evaluation using ψ₅/SE and lattice-based benchmarking within the live governance engine.",
+    "actions": [
+      {
+        "id": "action-1",
+        "type": "integration",
+        "description": "Wire SCE evaluation outputs into the ISA-GCS governance evaluation stage as a required precondition for proposal classification and scoring.",
+        "componentsAffected": [
+          "governance-evaluator",
+          "sce-adapter",
+          "envelope-delta-computation"
+        ]
+      },
+      {
+        "id": "action-2",
+        "type": "calibration-guard",
+        "description": "Bind SCE calibration non-regression guard to Genesis Governance Article V.4 and enforce auto-fail on calibration regression events.",
+        "componentsAffected": [
+          "calibration-guard",
+          "compliance-registry",
+          "sce-metric-importer"
+        ]
+      },
+      {
+        "id": "action-3",
+        "type": "telemetry",
+        "description": "Enable ψ₅/SE and envelope delta telemetry export from SCE into the governance benchmarking and reporting layers.",
+        "componentsAffected": [
+          "telemetry-bus",
+          "benchmarking-lattice",
+          "governance-reporting"
+        ]
+      }
+    ],
+    "dependencies": [
+      "SCE core engine available and compiled",
+      "Genesis Governance v4.0 (Enhanced) active",
+      "Canonical Vertex Registry v1.0.0 loaded"
+    ]
+  },
+  "metrics": [
+    {
+      "id": "sce.calibration.non_regression_score",
+      "label": "SCE Calibration Non-Regression Score",
+      "direction": "increase",
+      "magnitude": "high",
+      "confidence": 0.9
+    },
+    {
+      "id": "governance.stability.index",
+      "label": "Governance Stability Index",
+      "direction": "increase",
+      "magnitude": "medium",
+      "confidence": 0.85
+    },
+    {
+      "id": "risk.surface.delta",
+      "label": "Risk Surface Delta",
+      "direction": "decrease",
+      "magnitude": "medium",
+      "confidence": 0.8
+    }
+  ],
+  "constitutional": {
+    "sectionsImpacted": [
+      "Article 0 — Metric Authority Doctrine",
+      "Article II — Persistence and Hysteresis",
+      "Article IV — Emergency Eligibility and Rollback",
+      "Article V.4 — Calibration Non-Regression Guarantees",
+      "Article VII — Compliance Registry"
+    ],
+    "notes": "SCE integration must remain subordinate to Article 0 and Article 0.1, and must not introduce new sources of execution authority beyond ψ₅ and SE."
+  },
+  "evaluation": {
+    "requiredQuorum": 0.67,
+    "requiredThreshold": 0.6,
+    "autoFailConditions": [
+      "metric:sce.calibration.non_regression_score < 0.50",
+      "metric:risk.surface.delta > 0.25"
+    ],
+    "advisorySignals": [
+      "metric:governance.stability.index",
+      "metric:risk.surface.delta"
+    ]
+  }
+}
