@@ -137,7 +137,7 @@ Risk Signals:
 ISA Fabric includes executable simulations of core dynamics:
 
 - **ODE Trajectory Simulation** — Proxy 3D state (z drift, R curvature, Ξ coherence) converging to equilibrium under safety guards.  
-  See [constitution/appendices/ODE_Simulation_Example.py](constitution/appendices/ODE_Simulation_Example.py) for code & plots.
+  See [constitutional/appendices/ODE_Simulation_Example.py](constitutional/appendices/ODE_Simulation_Example.py) for code & plots.
 
 - **Hysteresis Loop Detection** — Monitors pathological Δζ variance over N epochs.  
   Example output in CLI: `isa diagnose hysteresis`
