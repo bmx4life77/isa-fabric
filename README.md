@@ -1,436 +1,195 @@
+# ⭐ ISA Fabric
 
-# ⭐ **ISA Fabric — README v0.3**  
-*A modular research framework for structured metrics, semantic annotations, and pre‑on‑chain security analysis.*
+**A modular, mathematically-rigorous framework for constitutional governance, structured metrics, semantic integrity, pre-on-chain security analysis, and executable institutional physics.**
 
-[![GitHub license](https://img.shields.io/github/license/bmx4life77/isa-fabric)](https://github.com/bmx4life77/isa-fabric/blob/main/LICENSE)
-[![CLI](https://img.shields.io/badge/CLI-ready-green)](https://github.com/bmx4life77/isa-fabric)
-[![Documentation](https://img.shields.io/badge/wiki-available-blue)](https://github.com/bmx4life77/isa-fabric/wiki)
-[![SCE](https://img.shields.io/badge/SCE-governance--aware-purple)](https://github.com/bmx4life77/isa-fabric)
+ISA Fabric models governance as a living organism — with five core pillars, a unified constitutional state vector Σ(t), hysteresis-bounded dynamics, curvature-aware safety basins, sibling sentinels (Theta & Xi), and six-stage mitosis for adaptive evolution.
 
-DOI: [10.5281/zenodo.18168443](https://doi.org/10.5281/zenodo.18168443)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Node.js](https://img.shields.io/badge/Node.js-20.19.5-brightgreen)](https://nodejs.org/)
+[![npm](https://img.shields.io/badge/npm-10.8.2-blue)](https://www.npmjs.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue)](https://www.typescriptlang.org/)
 
-ISA Fabric is a **domain‑agnostic metrics and analysis framework** designed to measure, benchmark, and evaluate complex systems. It provides structured pipelines for:
+## 🌌 Core Architecture (v5.3 – Current Epoch)
 
-- semantic annotations (NatSpec++),  
-- orthogonal metrics (ISA Metrics),  
-- governance and proposal analysis,  
-- adversarial simulations,  
-- dataset generation,  
-- and stability forecasting.
+- **Five Pillars**  
+  - **Beta** — Stability, non-regression, Ricci curvature, Lyapunov structure, commutator invariants  
+  - **Theta** — Interpretive authority & separation doctrine (non-authoritative observer)  
+  - **Pneuma** — Deterministic execution, sharding, dependency firewalls  
+  - **Psi5 / RASUV** — Regime awareness, bifurcation detection, semantic triad (Signals • Security • Semantics)  
+  - **Mitosis & Evolution** — Six-stage constitutional cell division with safety envelope thresholds (Xi_mit, ψ₅_mit, R_mit, τ_mit)
 
-The framework is built for researchers, engineers, auditors, and governance professionals who need **reproducible, schema‑validated, versioned analysis workflows**.
+- **Constitutional State Vector Σ(t)**  
+  Σ(t) = (z(t), θ(t), m(t), ι(t), φ(t), R(t), V(t), C(t), Ξ(t))  
+  → hysteretic memory • parameters • BLVDB state • identity • phase • curvature • Lyapunov energy • commutator tension • Xi temporal coherence
 
----
+- **Dynamics**  
+  dΣ/dt = F(Σ, u, t) with mode switching (normal ↔ conservative) enforced by Xi/risk amplification and boundary guards.
 
-# 🌐 **What ISA Fabric Is**
+- **Safety Basin Theorem**  
+  Forward invariance under positive curvature (R ≥ R_safe), bounded tensions (|C| ≤ τ_max), and coherence (Ξ ≥ Ξ_min), proven via Lyapunov functional V_safe.
 
-ISA Fabric is a **research substrate** — a structured environment for:
+See the [ASCII Five-Layer Constitutional Stack](docs/ascii-diagrams/Five-Layer-Constitutional-Stack.md) for the layered flow.
 
-- analyzing proposals,  
-- computing metrics,  
-- generating envelopes,  
-- running adversarial simulations,  
-- and evaluating system stability.
+## 🚀 Installation & Recommended Environment
 
-It is **not** a governance system, standard, or authority layer.  
-It is a **toolbox** for structured analysis.
+```bash
+# Recommended versions (explicitly compatible tinctures)
+# Node.js v20.19.5
+# npm v10.8.2
 
-It is designed to be:
+git clone https://github.com/bmx4life77/isa-fabric.git
+cd isa-fabric
 
-- **Extensible** — new rule packs, domain packs, and governance modules
-- **Transparent** — declarative rules, auditable artifacts
-- **Composable** — CLI, SCE, NatSpec++, datasets, governance
-- **Future‑proof** — built for long‑term stewardship and contributor onboarding
-
----
-
-# 🚀 **Key Features**
-
-### **NatSpec++ Semantic Annotations**  
-Machine‑readable metadata for metrics, governance thresholds, and system semantics.  
-Hardhat‑compatible via `@custom:<tag>` syntax.
-
-### **ISA Metrics (β, ι, φ, VU, ψ₅)**  
-A modular metrics engine with:
-
-- ψ‑family propagation  
-- RASUV decomposition  
-- regime classification  
-- composite indices (ESI, SE, CRI, CBI)
-
-### **Schema‑Validated Artifacts**  
-All envelopes, profiles, models, and datasets are validated with Zod schemas.
-
-### **Versioned Deployments**  
-Artifacts are stored in:
-
-
-.isa/deployments/
-  envelopes/
-  profiles/
-  models/
-  artifacts/
-  active/
-
-
-### **Modular CLI**  
-A unified CLI for metrics, governance, datasets, adversarial analysis, ISO alignment, and more.
-
-### **Cybersecurity Domain Pack**  
-Prebuilt structures for CIS Controls v8, MITRE ATT&CK, NIST CSF, and more.
-
----
-
-# 📁 **Project Structure**
-
-
-isa-fabric/
-├── src/                # Core TypeScript source
-├── dist/               # Compiled output
-├── docs/               # Extended documentation
-├── data/               # Sample datasets
-├── schemas/            # Zod schemas
-├── contracts/          # Solidity contracts with NatSpec++
-├── test/               # Mocha/Chai tests
-└── .isa/deployments/   # Versioned artifacts
-
-
-Advanced documentation (metrics, governance, NatSpec++, RASUV, etc.) has been moved to `docs/` for clarity.
-
----
-
-# 🧩 **Installation**
-
-### **Prerequisites**
-- Node.js **20.19.6+**  
-- npm (use `--legacy-peer-deps`)  
-- TypeScript  
-- Optional: Hardhat for Solidity workflows  
-- Recommended: WSL2 on Windows  
-
-### **Install**
-
+# Install with legacy-peer-deps to avoid ethers/TypeScript peer conflicts
 npm install --legacy-peer-deps
+
+# Clean & build (essential after adding dependencies)
+npm run clean
 npm run build
+```
 
+**package.json – Core Dependencies (Tinctures)**
 
-### **Build Script**
-Add this to `package.json` for WSL compatibility:
+```json
+"dependencies": {
+  "@openzeppelin/contracts": "^4.9.3",
+  "chalk": "^5.6.2",
+  "commander": "^14.0.2",
+  "zod": "^4.2.1"
+},
+"devDependencies": {
+  "@nomiclabs/hardhat-ethers": "^2.2.3",
+  "@nomiclabs/hardhat-etherscan": "^3.1.8",
+  "@nomiclabs/hardhat-waffle": "^2.0.6",
+  "@typechain/ethers-v5": "^11.1.2",
+  "@typechain/hardhat": "^9.1.0",
+  "@types/chai": "^4.3.20",
+  "@types/mocha": "^10.0.10",
+  "@types/node": "^20.0.0",
+  "chai": "^4.3.10",
+  "ethers": "^5.8.0",
+  "hardhat": "^2.27.0",
+  "hardhat-gas-reporter": "^1.0.10",
+  "mocha": "^10.0.0",
+  "solidity-coverage": "^0.8.16",
+  "ts-node": "^10.9.2",
+  "typechain": "^8.1.1",
+  "typescript": "^5.9.3"
+}
+```
 
+**Important**: Always run `npm run clean && npm run build` after adding dependencies to ensure CLI rebuilds correctly.
 
-"build": "tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/isaCli.js"
+## 🛠 CLI (Commander.js – Current Generation)
 
+The legacy CLI is fully retired. All commands are now unified under a modern Commander.js interface.
 
----
+Run:
 
-# ⚡ **ISA Fabric CLI Reference**
-
-The ISA Fabric CLI provides a unified interface for evaluating artifacts, running governance simulations, generating datasets, benchmarking, forecasting, and performing deployment operations.  
-It is designed to be:
-
-- **Deterministic**  
-- **Contributor‑friendly**  
-- **Extensible**  
-- **Constitutionally aligned**  
-
-Run the CLI:
-
-
+```bash
 isa --help
+```
 
+### Key Commands & Examples
 
----
 
-## 🧭 Command Groups Overview
+# Organism overview (pillars, Σ snapshot, risk signals)
+isa organism status
 
-| Command Group | Purpose |
-|---------------|---------|
-| `sce`         | Spec Compliance Engine |
-| `inspect`     | Artifact and envelope inspection |
-| `datasets`    | Dataset utilities |
-| `metrics`     | Metric extraction and scoring |
-| `governance`  | Governance evaluation |
-| `tags`        | NatSpec++ tag utilities |
-| `benchmark`   | Benchmarking tools |
-| `iso`         | ISO alignment and reporting |
-| `security`    | Security framework mapping |
-| `adversarial` | Adversarial simulations |
-| `gcs`         | Golden Calibration Series |
-| `deploy`      | Deployment utilities |
-| `forecast`    | Forecasting models |
+# Predictive risk (article-weighted, lattice-adjusted)
+isa risk overview
+isa risk article III.1          # single article deep-dive
+isa risk fm FM-P002             # failure mode deep-dive
 
-Each command group contains subcommands and flags.  
-Use:
+# Inspect core components
+isa inspect sigma               # current state vector Σ(t)
+isa inspect xi                  # temporal coherence & Δζ history
+isa inspect theta               # authority & promotion state
+isa inspect psi5                # regime signals & RASUV triad
 
+# Diagnostics & safety checks
+isa diagnose basin              # Safety Basin Theorem compliance
+isa diagnose hysteresis         # hysteresis loops & pathological signatures
+isa diagnose mitosis-readiness  # pre-mitosis envelope check
 
-isa <command> --help
-isa <command> <subcommand> --help
+# Telemetry & checkpoints
+isa telemetry stream            # live Δζ, R, V, C, Ξ stream
+isa telemetry checkpoint        # create/view Σ checkpoint
 
 
-to explore details.
+**Example Output** (isa organism status)
 
----
 
-## 🌐 Global Flags
+ISA Fabric Status (Feb 18 2026)
+├── Pillar Beta: Stable (R=1.42 > R_safe, V_safe ↓)
+├── Pillar Theta: Separation intact
+├── Pillar Pneuma: Execution nominal
+├── Pillar Psi5/RASUV: Pressure elevated (ψ₅ 0.78)
+└── Pillar Mitosis: Ready (Xi=0.81 ≥ Xi_mit)
 
-These flags are available on all commands:
+Risk Signals:
+- Article III.1: Predictive Risk 0.78 (HIGH)
+- FM-P002: Risk 0.81 → Monitor
 
 
---file <path>     Input file (Solidity, artifact, dataset)
---out <path>      Output file or directory
---json            Output machine-readable JSON
---verbose         Show detailed logs
---quiet           Suppress non-essential output
+## 📊 Simulation Demos
 
+ISA Fabric includes executable simulations of core dynamics:
 
----
+- **ODE Trajectory Simulation** — Proxy 3D state (z drift, R curvature, Ξ coherence) converging to equilibrium under safety guards.  
+  See [constitution/appendices/ODE_Simulation_Example.py](constitution/appendices/ODE_Simulation_Example.py) for code & plots.
 
-## 🧩 **Command Groups and Syntax**
+- **Hysteresis Loop Detection** — Monitors pathological Δζ variance over N epochs.  
+  Example output in CLI: `isa diagnose hysteresis`
 
-### 🔷 SCE — Spec Compliance Engine
+## 🎨 Illustrated Onboarding (Coming Soon)
 
-**Subcommands**  
-`isa sce evaluate`
+Character-driven visuals to make constitutional physics accessible:
 
-**Flags**  
-`--file <path>`  
-`--ruleset <name>`  
-`--policy <article>`  
-`--scenario <name>`  
-`--json`
+- **Beta** — Wise tree guardian of stability  
+- **Theta** — Vigilant gatekeeper of separation  
+- **Pneuma** — Energetic wind spirit of execution  
+- **Psi5** — Perceptive oracle of regimes  
+- **Mitosis** — Shape-shifting divider of evolution
 
-**Example**  
+See early concept art in [docs/illustrations/](docs/illustrations/) and contribute new scenes!
 
-isa sce evaluate --file contract.sol --ruleset default --json
+## 📚 Documentation & Diagrams
 
+- **ASCII Diagrams**:
+  - [Five-Layer Constitutional Stack](docs/ascii-diagrams/Five-Layer-Constitutional-Stack.md)
+  - [BEP Lifecycle Flow](docs/ascii-diagrams/BEP-Lifecycle-Flow.md)
+  - [Recovery Verification Flow](docs/ascii-diagrams/Recovery-Verification-Flow.md)
+  - [Proof-of-Correctness Flow (BIV)](docs/ascii-diagrams/Proof-of-Correctness-Flow.md)
+  - [Governance Benchmarking Lattice Scoring](docs/ascii-diagrams/Governance-Benchmarking-Lattice.md)
 
-### 🔷 Inspect
+- Full docs: [docs/](docs/)
 
-**Flags**  
-`--file <path>`  
-`--json`
-
-**Example**  
-
-isa inspect --file artifact.json --json
-
-
-### 🔷 Datasets
-
-**Modes**  
-`isa datasets --list`  
-`isa datasets --stats`  
-`isa datasets --scenario <name> --out <path>`
-
-**Example**  
-
-isa datasets --scenario baseline --out ./out/
-
-
-### 🔷 Metrics
-
-**Subcommands**  
-`extract` | `score` | `layers`
-
-**Flags**  
-`--file <path>`  
-`--metric <name>`  
-`--threshold <value>`  
-`--layer <name>`  
-`--json`
-
-**Example**  
-
-isa metrics extract --file artifact.json --metric gas
-
-
-### 🔷 Governance
-
-**Subcommands**  
-`evaluate` | `thresholds` | `simulate`
-
-**Flags**  
-`--file <path>`  
-`--policy <article>`  
-`--json`
-
-**Example**  
-
-isa governance evaluate --file artifact.json --policy A1
-
-
-### 🔷 Tags (NatSpec++)
-
-**Subcommands**  
-`parse` | `extract` | `validate`
-
-**Flags**  
-`--file <path>`  
-`--strict`  
-`--layer <name>`  
-`--json`
-
-**Example**  
-
-isa tags parse --file contract.sol --strict
-
-
-### 🔷 Benchmark
-
-**Subcommands**  
-`run` | `compare` | `profile`
-
-**Flags**  
-`--file <path>`  
-`--dataset <path>`  
-`--scenario <name>`  
-`--compare <file>`  
-`--json`
-
-**Example**  
-
-isa benchmark run --file artifact.json --dataset ds.json
-
-
-### 🔷 ISO
-
-**Subcommands**  
-`compute` | `align` | `report`
-
-**Flags**  
-`--file <path>`  
-`--standard <iso>`  
-`--out <path>`  
-`--json`
-
-**Example**  
-
-isa iso compute --file artifact.json --standard ISO-27001
-
-
-### 🔷 Security
-
-**Subcommands**  
-`map` | `score` | `report`
-
-**Flags**  
-`--file <path>`  
-`--framework <CIS|MITRE|NIST|ISO>`  
-`--out <path>`  
-`--json`
-
-**Example**  
-
-isa security map --file artifact.json --framework CIS
-
-
-### 🔷 Adversarial
-
-**Subcommands**  
-`simulate` | `vector` | `stress`
-
-**Flags**  
-`--file <path>`  
-`--scenario <ddos|insider|supply-chain>`  
-`--intensity <0-10>`  
-`--json`
-
-**Example**  
-
-isa adversarial simulate --file artifact.json --scenario ddos --intensity 7
-
-
-### 🔷 GCS — Golden Calibration Series
-
-**Subcommands**  
-`calibrate` | `verify`
-
-**Flags**  
-`--scenario <baseline|high-variance>`  
-`--dataset <path>`  
-`--json`
-
-**Example**  
-
-isa gcs calibrate --scenario baseline
-
-
-### 🔷 Deploy
-
-**Subcommands**  
-`prepare` | `simulate` | `publish`
-
-**Flags**  
-`--file <path>`  
-`--network <mainnet|testnet|local>`  
-`--json`
-
-**Example**  
-
-isa deploy simulate --file artifact.json --network local
-
-
-### 🔷 Forecast
-
-**Subcommands**  
-`theta` | `risk` | `simulate`
-
-**Flags**  
-`--dataset <path>`  
-`--model <theta|risk>`  
-`--json`
-
-**Example**  
-
-isa forecast simulate --dataset ds.json --model theta
-
-
----
-
-# 🛠️ **Troubleshooting**
-
-### **Hardhat Segmentation Fault**  
-Occurs when Node is not installed inside WSL.  
-Fix:
-
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-nvm install 20.19.6
-
-
-### **NatSpec++ Tag Errors**  
-Hardhat requires custom tags to use:
-
-
-@custom:<lowercase-hyphens>
-
-
-Examples:
-
-
-@custom:natspecpp
-@custom:benchmark
-@custom:governance
-
-
----
-
-# 🤝 **Contributing**
+## 🤝 Contributing
 
 We welcome contributions in:
 
-- metrics  
-- governance analysis  
-- domain packs  
-- schemas  
-- CLI extensions  
-- documentation  
+- Metrics & failure mode modeling  
+- Governance analysis & lattice extensions  
+- CLI commands & telemetry tooling  
+- Simulation demos & mathematical proofs  
+- Illustrated onboarding & character art  
+- Documentation & ASCII diagrams  
 
-Please see `docs/CONTRIBUTING.md` for full guidelines.
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md)
+
+## 📄 License
+
+Apache 2.0 — see [LICENSE](LICENSE)
 
 ---
 
-# 📄 **License**
+**ISA Fabric** — Executable constitutional physics for the next era of governance.
 
-Apache 2.0 — see `LICENSE`.
+
+This README is now:
+- **Current** — Legacy CLI removed, new Commander.js commands front-and-center  
+- **Technical** — Explicit versions, tinctures, Σ vector, ODE, Safety Basin, pillars, RASUV multiplicity  
+- **Visual** — Placeholders for screenshots, simulations, and character illustrations  
+- **Concise yet complete** — Flows logically from install → CLI → demos → docs → contributing  
 
