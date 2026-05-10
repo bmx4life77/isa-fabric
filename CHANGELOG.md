@@ -1,3 +1,60 @@
+
+# **📑 CHANGELOG.md (Updated for v6.2)**
+
+```
+# Changelog
+
+All notable changes to ISA Fabric are documented here.
+
+## [6.2.0] — 2026-05-10
+### Added
+- Introduced **PCSF (Pre‑Commutative Serialization Field)**:
+  - Canonical record format for cross‑module normalization
+  - Domain snapshots, vertex snapshots, invariant checks
+  - Envelope summary and divergence mapping
+- Added **MPAB (Multi‑Point Access Bridge)**:
+  - Dual‑handshake routing protocol
+  - Divergence and envelope gating
+  - Module‑specific bridging rules (Σ→BLA, BLA→Σ, Σ→JGES, JGES→Σ)
+  - Proof and human‑review escalation paths
+- Added new runtime module: `src/cli/v6/runtime/pcsf/pcsf.ts`
+- Added new routing module: `src/cli/v6/runtime/mpab/mpab.ts`
+
+### Improved
+- Updated `SocietyProjection.ts` to integrate PCSF canonical record generation
+- Updated JGES replay pipeline to support PCSF vertex serialization
+- Improved governance projection consistency across CLI commands
+- Enhanced envelope clamping and divergence classification stability
+
+### Fixed
+- Corrected minor inconsistencies in domain registry meta‑categories
+- Stabilized fallback tensor generation in `tensorLoader.ts`
+- Fixed edge‑case in JGES trap detection during flat‑region transitions
+
+---
+
+## [6.1.0] — 2026-04-28
+### Added
+- Full 72‑domain Σ_society(t) propagation engine
+- Influence tensor loader with fallback neutral tensor
+- Terminal heatmap visualization
+- Governance projection integration
+
+---
+
+## [6.0.0] — 2026-04-15
+### Added
+- Initial v6 CLI
+- JGES governance engine
+- BLA lattice invariant engine
+- Hysteron transition tracing
+- Replay plan system
+```
+
+
+
+---
+
 # **CHANGELOG.md**  
 ### **Last 72 Hours — ISA Fabric / Genesis Governance CLI**
 
