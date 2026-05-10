@@ -1,7 +1,7 @@
 {
   "name": "isa-fabric",
-  "version": "0.4.0",
-  "description": "ISA Fabric — Genesis Governance v4.0, Spec Compliance Engine, and Unified CLI.",
+  "version": "0.6.0",
+  "description": "ISA Fabric — Genesis Governance v6.1, Spec Compliance Engine, and Unified CLI.",
   "author": "Louis Pearson <kctiDAO@gmail.com>",
   "license": "Apache-2.0",
   "homepage": "https://github.com/bmx4life77/isa-fabric",
@@ -12,19 +12,15 @@
   "bugs": {
     "url": "https://github.com/bmx4life77/isa-fabric/issues"
   },
-
   "type": "commonjs",
-  "main": "dist/src/cli/index.js",
+  "main": "dist/cli/isa.js",
   "bin": {
-    "isa": "./dist/cli/index.js"
+    "isa": "./dist/cli/isa.js"
   },
-
   "scripts": {
-    "start": "node index.js",
-    "envelope": "node dist/analytics/envelopeCli.js data/aggregated_metrics3_2.json",
-    "diagnostics": "node dist/analytics/isaDiagnostics.js data/aggregated_metrics3_2.json",
+    "start": "node dist/cli/isa.js",
     "clean": "rm -rf artifacts cache dist && echo 'Workspace cleaned.'",
-    "build": "tsc -p tsconfig.json && cp -r src/schemas dist/schemas && chmod +x dist/cli/index.js",
+    "build": "tsc -p tsconfig.json && cp -r src/schemas dist/schemas && cp -r src/constitution dist/constitution && cp -r src/operators dist/operators && cp src/cli/v6/society/tensor.json dist/cli/v6/society/ &&      chmod +x dist/cli/isa.js",
     "compile": "npx hardhat compile",
     "natspec": "npx hardhat natspec",
     "benchmark": "npx hardhat benchmark",
@@ -33,6 +29,12 @@
     "compute-security": "ts-node src/security/computeSecurity.ts",
     "adv:gen-workloads": "ts-node src/workloads/workloadGenerator.ts",
     "adv:run": "ts-node src/tools/advRunner.ts",
+    "datasets": "ts-node src/tools/datasets/isa_datasets.ts",
+    "datasets:generate": "ts-node src/tools/datasets/isa_datasets.ts generate --scenario all",
+    "sce": "TS_NODE_CACHE=false ts-node sce/run.ts",
+    "parse": "ts-node src/natspec/natspecParserFile.ts",
+    "envelope": "node dist/analytics/envelopeCli.js data/aggregated_metrics3_2.json",
+    "diagnostics": "node dist/analytics/isaDiagnostics.js data/aggregated_metrics3_2.json",
     "forecast": "node dist/analytics/forecastCli.js data/aggregated_metrics3_2.json",
     "fre": "node dist/fre/freCli.js data/aggregated_metrics3_2.json",
     "fre:events": "node dist/fre/freCli.js data/aggregated_metrics3_2.json --events",
@@ -41,19 +43,8 @@
     "fre:report": "node dist/fre/freCli.js data/aggregated_metrics3_2.json --out data/fre_report.json",
     "fre:check": "ts-node scripts/checkFreSnapshot.ts data/fre_report.json golden/fre/agg3_2.json",
     "fre:smoke": "npm run build && node dist/fre/freCli.js data/aggregated_metrics3_2.json --ui && node dist/fre/freCli.js data/aggregated_metrics3_2.json --shock auto --ui",
-    "metrics:evaluate": "node dist/cli/index.js metrics evaluate",
-    "governance:run": "node dist/cli/index.js governance run",
-    "deploy:list": "node dist/cli/index.js deploy list",
-    "deploy:history": "node dist/cli/index.js deploy history",
-    "deploy:inspect": "node dist/cli/index.js deploy inspect",
-    "evaluate": "node dist/cli/index.js evaluate",
-    "datasets": "ts-node src/tools/datasets/isa_datasets.ts",
-    "datasets:generate": "ts-node src/tools/datasets/isa_datasets.ts generate --scenario all",
-    "sce": "TS_NODE_CACHE=false ts-node sce/run.ts",
-    "parse": "ts-node src/natspec/natspecParserFile.ts",
     "prepare": "npm run build"
   },
-
   "keywords": [
     "governance",
     "cli",
@@ -65,7 +56,6 @@
     "isa-fabric",
     "genesis-governance"
   ],
-
   "files": [
     "dist/**/*",
     "README.md",
@@ -73,13 +63,12 @@
     "governance_failure_modes.jsonl",
     "docs/**/*"
   ],
-
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.3",
+    "chalk": "^5.6.2",
     "commander": "^14.0.2",
     "zod": "^4.2.1"
   },
-
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@nomiclabs/hardhat-etherscan": "^3.1.8",
@@ -99,15 +88,12 @@
     "typechain": "^8.1.1",
     "typescript": "^5.9.3"
   },
-
   "engines": {
     "node": ">=18.0.0"
   },
-
   "publishConfig": {
     "access": "public"
   },
-
   "sideEffects": false
 }
 
