@@ -297,6 +297,100 @@ S=3 V=3 ξ=#[2, 0, 0, 0, 0] Dom=I: Productive Duality Env=Safe (P0/S0/E0) Safe=t
 
 ---
 
+**✅ Expanded PCSF Serialization Details**
+
+### **PCSF — Pre-Commutative Serialization Field**  
+**v6.2 Canonical Specification**
+
+The **Pre-Commutative Serialization Field (PCSF)** is the constitutional airlock of ISA Fabric. It acts as a mandatory normalization, validation, and bounding layer that **every cross-module state transition must pass through** before any bridging or propagation occurs.
+
+Its purpose is to enforce **canonical form, semantic hygiene, and invariant compliance** at the exact moment state leaves one organ and enters another — preventing representational drift, malformed data, and unsafe handoffs.
+
+---
+
+#### **Core Design Principles**
+
+1. **Pre-Commutative** — Normalization happens *before* any module interaction (commutation).
+2. **Canonical & Replay-Verifiable** — Every PCSF record is deterministically serializable and must produce identical results under replay.
+3. **Bounded & Typed** — All fields have strict types, ranges, and validation rules.
+4. **Tamper-Evident** — Every record includes a cryptographic commitment (SHA-256 of canonical JSON).
+
+---
+
+#### **PCSF Record Structure (Canonical)**
+
+```ts
+interface PCSF_Record {
+  // Metadata
+  recordId: string;           // nextId() or UUID
+  timestamp: number;          // Unix ms
+  lineageId: string;          // v6.1-root or fork lineage
+  version: string;            // "6.2.0"
+
+  // Source / Destination
+  sourceModule: "anima" | "sigma" | "society" | "bla" | "jges" | "lean" | "cli";
+  targetModule: string;
+
+  // Core State Snapshot (always present)
+  sigmaSnapshot: {
+    V: number;                // Lyapunov energy
+    xi: number;               // total ambiguity
+    psiComponents: number[];  // [ψ1 ... ψ5]
+    envelope: "P0" | "P1" | "P2" | "P3";
+    divergenceClass: "GREEN" | "YELLOW" | "RED";
+    curvatureClass: "C0" | "C1" | "C2";
+  };
+
+  // Optional rich context
+  societyTensorHash?: string;   // SHA-256 of current Σ_society(t) slice
+  jgesVertexId?: string;        // e.g. "v_jges_142"
+  activeHysterons?: string[];   // e.g. ["stability_hysteron"]
+
+  // Validation & Integrity
+  invariantsChecked: string[];  // e.g. ["ψ5-separation", "homogeneity-0", "preisach-α<β"]
+  validationPassed: boolean;
+  commitment: string;           // SHA-256 of canonicalized record (excluding this field)
+}
+```
+
+---
+
+#### **Serialization Rules (Strict)**
+
+- **Format**: Canonical JSON (keys sorted lexicographically, no whitespace, numbers with fixed precision).
+- **Precision**:
+  - Floats: 4 decimal places max (e.g. `0.4362`)
+  - Arrays: fixed order `[ψ1, ψ2, ψ3, ψ4, ψ5]`
+- **Hashing**: SHA-256 over the entire record *before* adding the `commitment` field.
+- **Compression**: Optional zlib/gzip for large tensors (but canonical hash is always on uncompressed form).
+- **Versioning**: Any change to structure or validation rules requires a new PCSF version + BEP ratification.
+
+---
+
+#### **Validation Gates (Enforced)**
+
+| Gate                        | Condition                                      | Action on Failure          |
+|----------------------------|------------------------------------------------|----------------------------|
+| **Type & Range**           | All fields within declared bounds              | Reject record              |
+| **Invariant Compliance**   | ψ5/SE separation, homogeneity degree, α<β     | Conservative mode trigger  |
+| **Lineage Continuity**     | lineageId matches current root                 | Lineage review + rollback  |
+| **Semantic Hygiene**       | No undefined fields, no narrative strings      | Strip & log                |
+| **Commitment Match**       | Recomputed hash == stored commitment           | Reject as tampered         |
+
+---
+
+#### **Usage in Flow**
+
+1. Module A finishes work → calls `pcsf.serialize(state, source, target)`
+2. PCSF validates, normalizes, adds commitment
+3. Record is written to AnimaDB
+4. MPAB bridge reads PCSF record and safely hands off to Module B
+5. Module B must acknowledge receipt with matching commitment
+
+This guarantees **no module can ever see raw, unvalidated state** from another organ.
+
+---
+
 ## Changelog Highlights
 
 **v6.2 (2026-05-10)**
