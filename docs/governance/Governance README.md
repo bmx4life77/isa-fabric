@@ -1,267 +1,128 @@
-Genesis Governance — README.md
-
-Foundational Governance Architecture for ISA Fabric
-
-Genesis Governance is the constitutional substrate of ISA Fabric — a principled, resilient, and future‑proof governance system designed to survive success, contributors, forks, and time. It defines the roles, processes, invariants, and interpretive layers that guide how ISA Fabric evolves while preserving safety, clarity, and contributor dignity.
-
-This repository contains the Genesis Governance Constitution (v4.0), supporting artifacts, calibration references, and interpretive layers such as Θ (Theta), the Meta‑Lens, and the RASUV‑aligned benchmarking framework.
-
-Genesis Governance is not a policy document.  
-It is a structural architecture — a blueprint for safe evolution.
+**Here is the updated, polished, and current README.md for Genesis Governance v6.1**
 
 ---
 
-🌐 Purpose
+```markdown
+# Genesis Governance v6.1
 
-Genesis Governance provides:
+**The Constitutional Substrate of ISA Fabric**
 
-- A minimal, principled constitutional core  
-- A clear separation between operative law and descriptive architecture  
-- A lens‑based interpretive system (Θ, Meta‑Lens, RASUV)  
-- A proposal lifecycle that is predictable and auditable  
-- A failure‑mode‑aware governance model  
-- A future‑proof structure that can scale with contributors, domains, and forks  
+Genesis Governance is the foundational constitutional architecture of ISA Fabric — a deterministic, replay-verifiable, self-correcting governance system designed to preserve metric truth, resist drift, survive forks and mitosis, and scale safely across contributors, domains, and lineages.
 
-It is intentionally designed to be:
-
-- lightweight  
-- non‑bureaucratic  
-- metrics‑aware  
-- resilient under stress  
-- transparent and self‑documenting  
+It treats governance not as policy, but as **computable physics** — with invariants, hysteretic memory, geometric structure, and formal verification.
 
 ---
 
-📁 Repository Structure
+## Purpose
 
-`
-docs/governance/
-│
-├── Genesis-Constitution.md        # The full v4.0 constitutional assembly
-├── Governance-Architecture.md     # Descriptive, non‑normative architecture
-├── Thresholds-and-Calibration.md  # Thresholds, invariants, and calibration logic
-├── Emergency-Protocols.md         # Emergency and fail‑safe procedures
-├── Lens-Operators.md              # Θ Operator and Lens‑Class Operator definitions
-├── Reference/                     # Interpretive layers, glossary, invariants
-└── Calibration/                   # RASUV, regime profiles, and benchmarking
-`
+Genesis Governance v6.1 establishes:
 
-This structure cleanly separates:
+- Metric Authority as the sole source of legitimacy (Article 0)
+- Strict Separation of Interpretive and Normative domains (Article 0.5)
+- Uniform Contraction Doctrine (UCD) for stability and confluence
+- Replay-verifiable event-driven execution
+- Constitutional self-repair through Class F Enforcement, JGES, and Invariarch mechanisms
+- Safe, auditable evolution through the Binding Evolution Protocol (BEP) and CUAP
 
-- Operative law (Constitution)  
-- Descriptive architecture (non‑binding)  
-- Interpretive layers (Θ, Meta‑Lens, RASUV)  
-- Calibration and thresholds  
-- Emergency and fail‑safe logic  
+It is deliberately **minimal in authority** yet **maximal in clarity and resilience**.
 
 ---
 
-🧩 Core Concepts
+## Repository Structure (v6.1)
 
-1. Operative Articles (Constitution v4.0)
-The Constitution defines:
+```bash
+constitution/
+├── genesis-governance-v6.1.md          # Main sealed Constitution
+├── bep/                                # Binding Evolution Proposals
+├── doctrines/                          # Formal doctrines & appendices A–Z
+├── operators/                          # Operator registry & NatSpec++
+├── lineage/                            # Lineage certificates & Merkle manifests
+├── manifest/                           # Cryptographic integrity files
+└── appendices/                         # Supporting sealed material (J, K, P, T, Z, etc.)
+```
 
-- Roles & responsibilities  
-- Proposal lifecycle  
-- Activation & deactivation rules  
-- Thresholds & quorum logic  
-- Emergency powers  
-- Stewardship and contributor rights  
-- Versioning and lineage  
-
-These articles are frozen, except through the formal amendment process.
-
----
-
-2. Descriptive Architecture
-Non‑normative documents that:
-
-- explain the system  
-- provide diagrams  
-- describe invariants  
-- outline failure modes  
-- give examples and rationale  
-
-These documents cannot override the Constitution.
+**Separation of Concerns**:
+- **Normative** → Main Constitution + frozen Articles
+- **Descriptive & Technical** → Appendices and Doctrines
+- **Interpretive** → Θ, Invariarch Pentad, JGES
+- **Executable** → CLI, Lean 4 formalization, replay engine
 
 ---
 
-3. Θ (Theta) Operator — Interpretive Lens
-Θ is a read‑only interpretive operator that:
+## Core Concepts
 
-- clarifies ambiguous proposals  
-- resolves semantic drift  
-- ensures alignment with invariants  
-- provides a structured interpretive layer  
+### 1. Metric Authority (Article 0)
+Metric truth (ψ₅, SE, and derived invariants) is the **sole source of legitimate authority**. No narrative, coalition, or operator may override it.
 
-Θ does not create new authority.  
-It is a lens, not a power.
+### 2. Separation Doctrine (Article 0.5)
+Strict firewall between:
+- **Normative** (enforcement, gating, correction)
+- **Interpretive** (Pneuma, Θ, quantum advisory layer)
 
----
+### 3. Unified Constitutional State Manifold Σ(t)
+The single source of truth. All governance actions are events reduced deterministically into Σ(t).
 
-4. Lens‑Class Operators (Optional Article)
-Inspired by Θ, Lens‑Class Operators provide:
+### 4. Hybrid Hysteretic Governance Engine (HGE)
+Combines Bouc–Wen smoothness with Preisach implicit memory for path-dependent, drift-resistant behavior.
 
-- domain‑specific interpretive layers  
-- structured semantic guidance  
-- non‑binding advisory clarity  
+### 5. Uniform Contraction Doctrine (UCD)
+Mathematical guarantee of stability and confluence under lawful transitions (Appendix L).
 
-These operators are optional and non‑authoritative, ensuring the Constitution remains simple and unfragmented.
+### 6. Invariarch Stratum & Class F Enforcement
+Dedicated constitutional organs for invariant preservation and corrective action when drift is detected.
 
----
-
-5. RASUV Meta‑Lens
-A metrics‑aligned interpretive layer that uses:
-
-- Rate  
-- Amplitude  
-- Spread  
-- Uniformity  
-- Variance  
-
-RASUV is used for:
-
-- governance calibration  
-- threshold validation  
-- failure‑mode detection  
-- proposal impact profiling  
+### 7. Constitutional Upgrade & Archive Protocol (CUAP)
+Strict, auditable process for all changes. Prevents architectural pollution and representational drift.
 
 ---
 
-🔄 Proposal Lifecycle
+## Key Innovations in v6.1
 
-Genesis Governance defines a predictable, auditable lifecycle:
-
-1. Draft  
-2. Lens Review (Θ + Meta‑Lens)  
-3. Impact Profile Assignment  
-4. Threshold Evaluation  
-5. Voting Window  
-6. Activation / Rejection  
-7. Lineage Recording  
-
-Every step is:
-
-- documented  
-- reproducible  
-- metrics‑aware  
-- steward‑friendly  
+- Full appendix system (A–Z) with individual cryptographic commitments
+- Merkle Tree sealing of the entire constitutional corpus
+- Formal integration of Lean 4 stability proofs
+- JGES (Junction Governance Engine) for geometric repair
+- Expanded failure mode taxonomy and test vectors
+- Clear lineage, revocation, and mitosis doctrines
 
 ---
 
-🛡 Thresholds & Calibration
+## Philosophy of Constitutional Compute
 
-Thresholds are defined using:
+We assert that **governance is physics**.
 
-- BFT‑style safety bounds  
-- collusion thresholds  
-- risk envelopes  
-- RASUV‑aligned calibration  
+A well-designed constitutional system should exhibit the same desirable properties as a stable physical organism:
+- Memory (hysteresis)
+- Self-correction (homeostasis)
+- Drift resistance (invariants)
+- Verifiable history (replay)
+- Safe reproduction (mitosis)
 
-Examples:
-
-- <33% Byzantine Fault Tolerance  
-- ≥40% collusion risk threshold  
-- ψ₅‑aligned anomaly ceilings  
-- divergence‑based emergency triggers  
-
-These thresholds are frozen invariants unless amended.
+Genesis Governance v6.1 is engineered as such an organism — lawful, observable, correctable, and evolutionarily robust.
 
 ---
 
-🚨 Emergency Protocols
+## Contributing
 
-Emergency procedures are:
+All contributions must:
+- Preserve constitutional invariants
+- Pass BIV (Binding Implementation Verification)
+- Follow the CUAP pipeline
+- Be submitted as a BEP
 
-- minimal  
-- clearly scoped  
-- time‑bounded  
-- metrics‑aware  
-- steward‑controlled  
-
-They include:
-
-- anomaly triggers  
-- divergence ceilings  
-- rollback windows  
-- temporary authority elevation  
-- automatic de‑escalation  
+Contributors are welcomed as stewards of clarity, not owners of power.
 
 ---
 
-🧠 Failure Mode Test Vectors
+## License
 
-Genesis Governance includes a library of failure mode vectors used for:
-
-- stress testing  
-- calibration  
-- proposal evaluation  
-- governance drift detection  
-
-Examples include:
-
-- Enron collapse  
-- Terra UST collapse  
-- adversarial governance scenarios  
-- collusion and quorum manipulation  
-- semantic drift and proposal ambiguity  
-
-These vectors help ensure the Constitution is resilient under real‑world stress.
+Apache License 2.0
 
 ---
 
-🧪 Integration with ISA Fabric
-
-Genesis Governance is the governance substrate for ISA Fabric.
-
-It integrates with:
-
-- ISA Metrics  
-- NatSpec++  
-- RASUV  
-- Calibration envelopes  
-- Domain packs  
-- CLI governance tools  
-
-The governance system is metrics‑aware, but metrics never override constitutional authority.
+**Sealed • Ratified • Canonical**  
+**Genesis Governance v6.1** — April 2026
 
 ---
 
-🤝 Contributing
-
-Contributors are encouraged to:
-
-- propose amendments  
-- refine descriptive architecture  
-- add failure mode vectors  
-- improve calibration logic  
-- expand Lens‑Class Operators  
-- enhance documentation  
-
-All contributions must follow:
-
-- constitutional invariants  
-- stewardship guidelines  
-- lineage and versioning rules  
-
----
-
-📄 License
-
-Genesis Governance is licensed under Apache 2.0.
-
----
-
-🎉 Summary
-
-Genesis Governance is a principled, resilient, future‑proof governance architecture designed to:
-
-- preserve clarity  
-- prevent drift  
-- survive stress  
-- empower contributors  
-- scale with the ecosystem  
-
-It is the foundation upon which ISA Fabric evolves — intentionally, safely, and transparently.
-
-**Archived Release:** https://doi.org/10.5281/zenodo.18168443
+This version is significantly more mature, precise, and aligned with the current state of ISA Fabric (v6.1) than the old v4 README. It maintains readability while reflecting the depth we’ve built (UCD, Invariarch, Class F, PCSF/MPAB readiness, etc.).
